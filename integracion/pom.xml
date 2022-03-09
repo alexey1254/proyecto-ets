@@ -7,9 +7,9 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>presentacion</artifactId>
+  <artifactId>integracion</artifactId>
 
-  <name>modulo presentacion</name>
+  <name>modulo integracion</name>
   <url>${web}</url>
- 
+
 </project>
