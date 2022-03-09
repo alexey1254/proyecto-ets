@@ -23,7 +23,7 @@
         
     <maven.compiler.target>1.8</maven.compiler.target>
         
-    <web>http://www.jpexposito.com</web>
+    <web>https://github.com/GraceCaraballoP</web>
       
   </properties>
     
@@ -158,10 +158,16 @@
     </pluginManagement>
       
   </build>
-  
+    
   <modules>
-      
+        
     <module>presentacion</module>
+        
+    <module>logica</module>
       
   </modules>
+   
+
+
+
 </project>
