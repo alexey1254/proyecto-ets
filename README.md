@@ -8,4 +8,4 @@
 
 [Diagrama de clases](/proyecto-ets/img/DiagramaClasesProyectoEts.drawio.png)
 
-[Diagrama de casos de uso](/proyecto-ets/img/DiagramaClasesProyectoEts.drawio.png)
+[Diagrama de casos de uso](/proyecto-ets/)
