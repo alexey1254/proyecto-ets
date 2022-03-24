@@ -77,3 +77,4 @@ public class Proveedor {
         this.nombre = nombre;
     }    
 }
+
