@@ -2,7 +2,7 @@ package es.iespuertodelacruz.ets;
 
 /**
  * Clase Persona que sera usada por la clase Cliente y Empleado
- *
+ * @author Grace
  */
 public class Persona {
     private String dni;

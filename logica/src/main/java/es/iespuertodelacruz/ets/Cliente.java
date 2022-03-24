@@ -1,8 +1,8 @@
 package es.iespuertodelacruz.ets;
 
 /**
- * Clase Persona que sera usada por la clase Cliente y Empleado
- *
+ * Clase Cliente.
+ * @author Grace
  */
 public class Cliente {
     private int codigo;

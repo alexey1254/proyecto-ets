@@ -1,4 +1,8 @@
 package es.iespuertodelacruz.ets;
+/**
+ * Clase Fecha que inicializa la variable fecha
+ * @author Grace
+ */
 
 public class Fecha {
     private int dia;
