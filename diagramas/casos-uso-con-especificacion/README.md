@@ -1,6 +1,6 @@
 # Especificacion de casos de uso
 
-## Esta especificación se basa en nuestro proyecto
+## Esta especificación se basa en nuestro proyecto [GestiNess](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)
 
 ## __Actores__
 
@@ -131,7 +131,6 @@
     | Notas |  |
     | Autor | Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
-
 
 - ### Gestionar cliente
 
