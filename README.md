@@ -2,7 +2,7 @@
 
 | Enlaces y colaboradores |  |
 |---|---|
-| Diagrama de clases: | [Enlace](/proyecto-ets/img/DiagramaClasesProyectoEts.drawio.png) |
+| Diagrama de clases: | [Enlace](diagramas/clases/DiagramaClasesProyectoEts.drawio.png) |
 | Diagrama de casos de uso: | [Enlace](diagramas/casos-uso-con-especificacion/README.md) |
 | colaboradores: | Grace Caraballo, Alejandro Marrero |
 
