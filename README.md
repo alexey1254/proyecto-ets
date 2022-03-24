@@ -9,5 +9,3 @@
 | __Diagrama de clases:__ | [Enlace](diagramas/clases/DiagramaClasesProyectoEts.drawio.png) |
 | __Diagrama de casos de uso:__ | [Enlace](diagramas/casos-uso-con-especificacion/README.md) |
 | __Colaboradores:__ | Grace Caraballo, Alejandro Marrero |
-
-Proyecto de entornos de desarrollo que engloba las asignaturas de programación, base de datos, inglés y entornos.
