@@ -1,4 +1,4 @@
-package main.java.es.iespuertodelacruz.ets;
+package es.iespuertodelacruz.ets;
 
 /**
  * Clase producto
