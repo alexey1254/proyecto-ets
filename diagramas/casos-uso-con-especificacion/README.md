@@ -8,12 +8,12 @@
 
     |  Actor | Cliente |
     |---|---|
-    | Descripción  | Es la persona que va a la tienda a comprar  |
+    | Descripción  | Es la persona que realiza una busqueda o compra |
     | Características  |  |
-    | Relaciones | Empleado |
-    | Referencias | Realizar compra, buscar producto |
+    | Relaciones |  |
+    | Referencias | Realizar Compra, Buscar Producto |
     |  Notas |  |
-    | Autor  | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     |Fecha | 23/03/2022 |
 
 - ### Administrador
@@ -22,10 +22,10 @@
     |---|---|
     | Descripción  | Jefe de la empresa  |
     | Características  |  |
-    | Relaciones | Cliente, empleado |
-    | Referencias | Puede hacer todos los casos de uso |
+    | Relaciones | Empleado |
+    | Referencias | Realizar Envio, Gestionar Stock, Gestionar Proveedor, Gestionar Horarios, Gestionar Cliente, Gestionar Empleado |
     |  Notas |  |
-    | Autor  | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     |Fecha | 23/03/2022 |
 
 - ### Empleado
@@ -34,130 +34,130 @@
     |---|---|
     | Descripción  | Cualquier empleado que trabaje en la empresa  |
     | Características  |  |
-    | Relaciones | Administrador, Cliente |
-    | Referencias | Buscar producto, realizar compra, Realizar envío, gestionar stock, gestionar proveedor, gestionar cliente |
+    | Relaciones | Administrador |
+    | Referencias | Realizar Envio, Ver-Gestionar Stock, Ver-Gestionar Proveedor, Ver-Gestionar Horarios, Gestionar Cliente |
     |  Notas |   |
-    | Autor  | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     |Fecha | 23/03/2022 |
 
 ## __Casos de uso__
 
-- ### Buscar producto
+- ### Buscar Producto
 
-    |  Caso de Uso CU | Buscar producto  |
+    |  Caso de Uso CU | Buscar Producto |
     |---|---|
     | Fuentes  | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
-    | Actor  | Cliente, empleado, administrador |
-    | Descripción | Busca cualquier producto publicado por la empresa |
-    | Flujo básico | Validarse -> Buscar producto |
+    | Actor  | Cliente |
+    | Descripción | Busca cualquier producto publicado por la empresa. |
+    | Flujo básico | Validarse -> Buscar Producto |
     | Pre-condiciones | Validarse |  
     | Post-condiciones  |  |  
     |  Requerimientos |  |
     |  Notas |  |
-    | Autor  | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     |Fecha | 24/03/2022 |
 
-- ### Realizar compra
+- ### Realizar Compra
 
     |  Caso de Uso CU | Realizar compra  |
     |---|---|
     | Fuentes  | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor  | Cliente |
-    | Descripción | El cliente realiza la compra, puede recoger y devolver el pedido |
-    | Flujo básico | Validarse -> Buscar producto -> Realizar compra |
-    | Pre-condiciones | Tarjeta de credito/debito, dinero en metálico, PayPal o Bizum |  
-    | Post-condiciones  | Solicitar envío |  
+    | Descripción | El cliente realiza la compra |
+    | Flujo básico | Validarse -> Buscar Producto -> Realizar Compra |
+    | Pre-condiciones | El cliente deberá tener alguno de los métodos de pago con los que se trabaja: Tarjeta de credito/debito, dinero en metálico, PayPal o Bizum |  
+    | Post-condiciones  | Solicitar Envío, Recoger,Devolver|  
     |  Requerimientos | Estar registrado y haber iniciado sesión (validarse) |
-    |  Notas | Solo se devuelve si el pedido esta en su caja y sin signos de uso |
-    | Autor  | Alejandro Marrero Cabrera |
+    |  Notas | |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     |Fecha | 24/03/2022 |
 
-- ### Realizar envío
+- ### Realizar Envío
 
-    |  Caso de Uso CU | Realizar envío  |
+    |  Caso de Uso CU | Realizar Envío  |
     |---|---|
     | Fuentes | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor | Empleado, Administrador |
-    | Descripción | Cuando el pago ha sido confirmado, el envío lo realiza un empleado de la empresa o el mismo Administrador |
-    | Flujo básico | Realizar compra -> Solicitar envío -> Realizar envío |
-    | Pre-condiciones |  |  
-    | Post-condiciones | Realizar envío |  
+    | Descripción | Cuando Cliente solicita el Envio, tanto Empleado como Administrador podrán Realizar Envio.  |
+    | Flujo básico | Realizar Compra -> Solicitar Envío -> Realizar Envío |
+    | Pre-condiciones | El Clliente deberá Solicitar el Envio |  
+    | Post-condiciones | |  
     | Requerimientos | Confirmación de compra |
     | Notas |  |
-    | Autor | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
 
-- ### Gestionar stock
+- ### Gestionar Stock
 
-    |  Caso de Uso CU | Gestionar stock  |
+    |  Caso de Uso CU | Gestionar Stock  |
     |---|---|
     | Fuentes | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor | Administrador, Empleado |
-    | Descripción | Este caso de uso sirve para dar de alta, dar de baja, ver productos y editarlos en nuestro stock |
-    | Flujo básico |  |
+    | Descripción | Este caso de uso sirve para que Administrador pueda Dar Alta, Dar Baja, Ver y Editar productos en stock. Mientras que Empleado solo podrá Ver el stock. |
+    | Flujo básico | Validarse -> Gestionar Stock |
     | Pre-condiciones | Validarse |  
     | Post-condiciones |  |  
     | Requerimientos | Ser Empleado o Administrador |
-    | Notas |  |
-    | Autor | Alejandro Marrero Cabrera |
+    | Notas | Al editar un producto se puede eliminar |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
 
-- ### Gestionar proveedor
+- ### Gestionar Proveedor
 
     |  Caso de Uso CU | Gestionar proveedor  |
     |---|---|
     | Fuentes | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor | Empleado, Administrador |
-    | Descripción | Este caso de uso sirve para dar de alta, dar de baja, ver proveedores y editar proveedores o eliminarlos |
-    | Flujo básico |  |
+    | Descripción | Este caso de uso sirve para que Administrador pueda Dar Alta, Dar Baja, Ver y Editar proveedores. Mientras que Empleado solo podrá Ver proveedores. |
+    | Flujo básico | Validarse -> Gestionar Proveedor |
     | Pre-condiciones | Validarse |  
     | Post-condiciones |  |  
-    | Requerimientos | Ser Administrador o Empleado |
+    | Requerimientos | |
     | Notas | Al editar un proveedor se puede eliminar |
-    | Autor | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
 
-- ### Gestionar horarios
+- ### Gestionar Horarios
 
-    |  Caso de Uso CU | Gestionar horarios  |
+    |  Caso de Uso CU | Gestionar Horarios  |
     |---|---|
     | Fuentes | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor | Administrador, Empleado |
-    | Descripción | Con este caso de uso, el administrador de la empresa puede crear horarios, verlos y editarlos pero el empleado solo podrá ver su horario |
-    | Flujo básico |  |
+    | Descripción | Este caso de uso sirve para que Administrador pueda Ver, Crear y Editar los horarios de los empleados.Mientras que Empleado solo podrá Ver horario. |
+    | Flujo básico | Validarse -> Gestionar Horarios |
     | Pre-condiciones | Validarse |  
     | Post-condiciones |  |  
-    | Requerimientos | Ser empleado o Administrador |
+    | Requerimientos | |
     | Notas |  |
-    | Autor | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
 
-- ### Gestionar cliente
+- ### Gestionar Cliente
 
-    |  Caso de Uso CU | Gestionar cliente |
+    |  Caso de Uso CU | Gestionar Cliente |
     |---|---|
     | Fuentes | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor | Empleado, Administrador |
-    | Descripción | Con este caso de uso, el empleado o el administrador puede dar de alta, baja ver y editar los clientes de la empresa |
-    | Flujo básico |  |
+    | Descripción | Este caso de uso sirve para que Administrador y Empleado puedan Dar Alta, Dar Baja, Ver y Editar clientes. |
+    | Flujo básico | Validarse -> Gestionar Cliente |
     | Pre-condiciones | Validarse |  
     | Post-condiciones |  |  
-    | Requerimientos | Ser Administrador o Empleado |
+    | Requerimientos | |
     | Notas |  |
-    | Autor | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
 
-- ### Gestionar empleado
+- ### Gestionar Empleado
 
-    |  Caso de Uso CU | Realizar envío  |
+    |  Caso de Uso CU | Gestionar Empleado  |
     |---|---|
     | Fuentes | [Este caso de uso se sustenta aqui](CasoDeUsoProyecto-CasosDeUso2.0.drawio_1.png)  |
     | Actor | Administrador |
-    | Descripción | Con este caso de uso, el administrador puede dar de alta, baja ver y editar los empleados de la empresa |
-    | Flujo básico |  |
+    | Descripción | Este caso de uso sirve para que Administrador pueda Dar Alta, Dar Baja, Ver y Editar empleados. |
+    | Flujo básico | Validarse -> Gestionar Empleado |
     | Pre-condiciones | Validarse |  
     | Post-condiciones |  |  
     | Requerimientos | Ser Administrador |
     | Notas | Al editar, tambien se puede borrar el empleado |
-    | Autor | Alejandro Marrero Cabrera |
+    | Autores  | Grace Stephanie Caraballo Pose y Alejandro Marrero Cabrera |
     | Fecha | 24/03/2022 |
