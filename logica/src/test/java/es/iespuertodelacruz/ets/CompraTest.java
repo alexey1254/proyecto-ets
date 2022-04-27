@@ -58,7 +58,7 @@ public class CompraTest {
 
     @Test
     public void getProductoTest() {
-        assertTrue(compra.getProducto().equals(new Producto()));
+        assertTrue(compra.getProducto().equals(producto));
     }    
 
     @Test

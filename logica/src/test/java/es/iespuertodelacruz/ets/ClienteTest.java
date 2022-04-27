@@ -49,9 +49,9 @@ public class ClienteTest {
 
     @Test
     public void setDatosTest() {
-        Persona persona2=new Persona()
-        cliente.setDatos(new Persona());
-        assertTrue(cliente.getDatos().equals(new Persona()));
+        Persona persona2=new Persona("1234J","Maria","Ramos");
+        cliente.setDatos(persona2);
+        assertTrue(cliente.getDatos().equals(persona2));
     }
     
     @Test
