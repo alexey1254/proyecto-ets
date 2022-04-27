@@ -3,18 +3,35 @@ package es.iespuertodelacruz.ets;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.experimental.theories.suppliers.TestedOn;
-import org.junit.jupiter.api.BeforeEach;
+/*import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+*/
+import org.junit.jupiter.api.*;
 
 public class CompraTest {
+    private static final int codigo = 001;
+    private static final int cantidad = 2;
+    private static final int codigoP = 001;
+    private static final String nombre = "Bolsa";
+    private static final int peso = 3500;
+    private static final int dia = 26;
+    private static final int mes = 02;
+    private static final int anio = 2020;
     Compra compra;
+    Producto producto;
+    Fecha fecha;
     
     @BeforeEach
     public void BeforeEach() {
+        if(producto==null){
+            producto=new Producto(codigoP,nombre,peso);
+        }
+        if(fecha==null){
+            fecha=new Fecha(dia,mes,anio);
+        }
         if(compra==null){
-            compra=new Compra(001,new Producto(),2,new Fecha(20, 02, 2020));
+            compra=new Compra(codigo,producto,cantidad,fecha);
+        }
     }
 
     @Test
@@ -25,7 +42,7 @@ public class CompraTest {
 
     @Test
     public void constructorCuatroParametrosCompraTest() {
-        assertNotNull(compra, "El objeto Cliente no puede ser nulo");
+        assertNotNull(compra, "El objeto Compra no puede ser nulo");
     }
 
     @Test
@@ -46,8 +63,9 @@ public class CompraTest {
 
     @Test
     public void setProductoTest() {
-        compra.setProducto(new Producto());
-        assertTrue(compra.getProducto().equals(new Producto()));
+        Producto producto2=new Producto(002,"Cartera",200);
+        compra.setProducto(producto2);
+        assertTrue(compra.getProducto().equals(producto2));
     }
     
     @Test
@@ -57,19 +75,21 @@ public class CompraTest {
 
     @Test
     public void setCantidadTest() {
-        compra.setCantidad(5);
-        assertTrue(compra.getCantidad()==5);
+        int cantidad2=5;
+        compra.setCantidad(cantidad2);
+        assertTrue(compra.getCantidad()==cantidad2);
     }
 
     @Test
     public void getFechaTest() {
-        assertTrue(compra.getFecha().equals(new Fecha(20,02,2020)));
+        assertTrue(compra.getFecha().equals(fecha));
     }    
 
     @Test
     public void setFechaTest() {
-        compra.setFecha(new Fecha(04,05,2021));
-        assertTrue(compra.getFecha().equals(new Fecha(04,05,2021)));
+        Fecha fecha2=new Fecha(04,05,2021);
+        compra.setFecha(fecha2);
+        assertTrue(compra.getFecha().equals(fecha2));
     }
 
 }

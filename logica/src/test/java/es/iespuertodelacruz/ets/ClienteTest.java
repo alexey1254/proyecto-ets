@@ -3,17 +3,27 @@ package es.iespuertodelacruz.ets;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ClienteTest {
+    private static final String direccion = "Calle 1";
+    private static final int codigo = 001;
+    private static final String apellido = "Perez";
+    private static final String nombre = "Juan";
+    private static final String dni = "12345Z";
     Cliente cliente;
+    Persona persona;
     
     @BeforeEach
     public void BeforeEach() {
+ 
+        if(persona==null){
+            persona=new Persona(dni,nombre,apellido);
+        }
         if(cliente==null){
-            cliente=new Cliente(001,new Persona(),"Calle 1");
+            cliente=new Cliente(codigo,persona,direccion);
+        }
     }
 
     @Test
@@ -23,34 +33,36 @@ public class ClienteTest {
 
     @Test
     public void getCodigoTest() {
-        assertTrue(cliente.getCodigo().equals("001"));
+        assertTrue(cliente.getCodigo()==codigo);
     }
     
     @Test
     public void setCodigoTest() {
-        cliente.setCodigo("002");
-        assertTrue(cliente.getCodigo().equals("002"));
+        cliente.setCodigo(002);
+        assertTrue(cliente.getCodigo()==002);
     }
 
     @Test
     public void getDatosTest() {
-        assertTrue(cliente.getDatos().equals(new Persona()));
+        assertTrue(cliente.getDatos().equals(persona));
     }    
 
     @Test
     public void setDatosTest() {
+        Persona persona2=new Persona()
         cliente.setDatos(new Persona());
         assertTrue(cliente.getDatos().equals(new Persona()));
     }
     
     @Test
     public void getDireccionTest() {
-        assertTrue(cliente.getDireccion().equals("Calle 1"));
+        assertTrue(cliente.getDireccion().equals(direccion));
     }    
 
     @Test
     public void setDireccionTest() {
-        cliente.setDireccion("Calle 2");
-        assertTrue(cliente.getDireccion().equals("Calle 2"));
+        String direccion2="Calle 2";
+        cliente.setDireccion(direccion2);
+        assertTrue(cliente.getDireccion().equals(direccion2));
     }
 }
