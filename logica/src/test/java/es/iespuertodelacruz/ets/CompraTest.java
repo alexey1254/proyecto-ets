@@ -3,10 +3,8 @@ package es.iespuertodelacruz.ets;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/*import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-*/
-import org.junit.jupiter.api.*;
 
 public class CompraTest {
     private static final int codigo = 001;

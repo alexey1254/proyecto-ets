@@ -3,10 +3,9 @@ package es.iespuertodelacruz.ets;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/*import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-*/
-import org.junit.jupiter.api.*;
+
 
 public class FechaTest {
     private static final int dia = 26;
@@ -22,14 +21,14 @@ public class FechaTest {
     }
 
     @Test
-    public void constructorVacioCompraTest() {
+    public void constructorVacioFechaTest() {
         Fecha fecha = new Fecha();
-        assertNotNull(fecha, "El objeto Compra debe ser nulo");
+        assertNotNull(fecha, "El objeto Fecha debe ser nulo");
     }
 
     @Test
-    public void constructorTresParametrosCompraTest() {
-        assertNotNull(fecha, "El objeto Compra no puede ser nulo");
+    public void constructorTresParametrosFechaTest() {
+        assertNotNull(fecha, "El objeto Fecha no puede ser nulo");
     }
     
     @Test

@@ -42,12 +42,12 @@ public class EmpleadoTest {
     @Test
     public void constructorTresParametrosEmpleadoTest() {
         Empleado empleado2=new Empleado(codigo, persona,fecha);
-        assertNotNull(empleado2, "El objeto Compra no puede ser nulo");
+        assertNotNull(empleado2, "El objeto Empleado no puede ser nulo");
     }
 
     @Test
     public void constructorCuatroParametrosEmpleadoTest() {
-        assertNotNull(empleado, "El objeto Compra no puede ser nulo");
+        assertNotNull(empleado, "El objeto Empleado no puede ser nulo");
     }
 
     @Test
