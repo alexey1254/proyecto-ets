@@ -164,13 +164,13 @@
   <modules>
             
     
-    <module>presentacion</module>
+    <module>vista</module>
             
     
-    <module>logica</module>
+    <module>model</module>
           
     
-    <module>integracion</module>
+    <module>controlador</module>
       
   </modules>
      

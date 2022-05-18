@@ -7,9 +7,9 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>integracion</artifactId>
+  <artifactId>vontrolador</artifactId>
 
-  <name>modulo integracion</name>
+  <name>modulo controlador</name>
   <url>${web}</url>
  
 </project>

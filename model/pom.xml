@@ -7,10 +7,10 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>logica</artifactId>
+  <artifactId>model</artifactId>
 
 
-  <name>modulo logica</name>
+  <name>modulo model</name>
   <url>${web}</url>
  
 </project>

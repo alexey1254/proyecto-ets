@@ -7,9 +7,9 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>presentacion</artifactId>
+  <artifactId>vista</artifactId>
 
-  <name>modulo presentacion</name>
+  <name>modulo vista</name>
   <url>${web}</url>
  
 </project>
