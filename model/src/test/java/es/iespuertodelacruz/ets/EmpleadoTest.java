@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import es.iespuertodelacruz.ets.vista.Empleado;
+import es.iespuertodelacruz.ets.vista.Fecha;
+
 public class EmpleadoTest {
     private static final int codigo = 001;
     private static final String cargo = "Cajero";

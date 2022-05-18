@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets;
+package es.iespuertodelacruz.ets.vista;
 
 /**
  * Clase Cliente.

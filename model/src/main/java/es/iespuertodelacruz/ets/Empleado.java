@@ -1,12 +1,11 @@
-package es.iespuertodelacruz.ets;
+package es.iespuertodelacruz.ets.vista;
 
 /**
  * Clase Empleado.
  * @author Grace
  */
-public class Empleado {
+public class Empleado extends Persona {
     private int codigo;
-    private Persona datos;
     private Fecha fechNac;
     private String cargo;
     
@@ -15,9 +14,9 @@ public class Empleado {
      * @param codigo del empleado
      * @param datos dni, nombre y/o apellido del empleado
      */
-    public Empleado(int codigo, Persona datos) {
+    public Empleado(int codigo,String dni, String nombre,String apellido) {
+        super(dni, nombre, apellido);
         this.codigo = codigo;
-        this.datos = datos;
     }
 
     /**
@@ -26,9 +25,9 @@ public class Empleado {
      * @param datos dni, nombre y/o apellido del empleado
      * @param fechNac fecha de nacimiento del empleado
      */
-    public Empleado(int codigo, Persona datos, Fecha fechNac) {
+    public Empleado(int codigo, String dni, String nombre,String apellido, Fecha fechNac) {
+        super(dni, nombre, apellido);
         this.codigo = codigo;
-        this.datos = datos;
         this.fechNac = fechNac;
     }
 
@@ -39,9 +38,9 @@ public class Empleado {
      * @param fechNac fecha de nacimiento del empleado
      * @param cargo que ostenta el empleado
      */
-    public Empleado(int codigo, Persona datos, Fecha fechNac, String cargo) {
+    public Empleado(int codigo, String dni, String nombre,String apellido, Fecha fechNac, String cargo) {
+        super(dni, nombre, apellido);
         this.codigo = codigo;
-        this.datos = datos;
         this.fechNac = fechNac;
         this.cargo = cargo;
     }
@@ -60,22 +59,6 @@ public class Empleado {
      */
     public void setCodigo(int codigo) {
         this.codigo = codigo;
-    }
-
-    /**
-     * Getter de los datos(dni, nombre, apellido) del empleado
-     * @return datos del empleado
-     */
-    public Persona getDatos() {
-        return datos;
-    }
-
-    /**
-     * Setter de los datos del empleado
-     * @param datos del empleado
-     */
-    public void setDatos(Persona datos) {
-        this.datos = datos;
     }
     
     /**

@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets;
+package es.iespuertodelacruz.ets.vista;
 /**
  * Clase Fecha que inicializa la variable fecha
  * @author Grace

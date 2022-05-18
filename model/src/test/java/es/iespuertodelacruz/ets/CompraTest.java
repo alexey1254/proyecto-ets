@@ -6,6 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import es.iespuertodelacruz.ets.vista.Compra;
+import es.iespuertodelacruz.ets.vista.Fecha;
+import es.iespuertodelacruz.ets.vista.Producto;
+
 public class CompraTest {
     private static final int codigo = 001;
     private static final int cantidad = 2;

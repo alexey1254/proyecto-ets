@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import es.iespuertodelacruz.ets.vista.Fecha;
+
 
 public class FechaTest {
     private static final int dia = 26;
