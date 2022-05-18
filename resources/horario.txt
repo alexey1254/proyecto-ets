@@ -1,0 +1,4 @@
+codigoHorario,horaInicio,horaFin,diasSemana
+1,08:30,16:30 - ,L M X J V
+2,12:00,20:00,M X J V S
+3,13:30,21:30,X J V S D
