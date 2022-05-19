@@ -1,29 +1,29 @@
 package es.iespuertodelacruz.ets;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.iespuertodelacruz.ets.Cliente;
-import es.iespuertodelacruz.ets.Compra;
-import es.iespuertodelacruz.ets.Envio;
-import es.iespuertodelacruz.ets.Fecha;
-import es.iespuertodelacruz.ets.Producto;
+import es.iespuertodelacruz.ets.*;
 
 public class EnvioTest {
-/*    private static final int codigo = 001;
+    private static final int codigo = 001;
     private static final int peso = 1500;
     private static final int cantidad = 1;
     private static final String estado = "En camino";
     private static final String apellido = "Perez";
     private static final String nombre = "Juan";
+    private static final String apellido2 ="Pepito";
     private static final String dni = "12345Z";
     private static final int dia = 26;
     private static final int mes = 02;
     private static final int anio = 2020;
     private static final String direccion = "Calle 1";
+    private static final Double precio = 2.34;
+    private static final int stock = 40;
     Compra compra;
     Fecha fecha;
     Persona persona;
@@ -35,16 +35,13 @@ public class EnvioTest {
     @BeforeEach
     public void BeforeEach() {
         if(cliente==null){
-            cliente=new Cliente(codigo,persona,direccion);
+            cliente=new Cliente(codigo,dni,nombre, apellido,apellido2,direccion);
         }
         if(fecha==null){
             fecha=new Fecha(dia,mes,anio);
         }
-        if(persona==null){
-            persona=new Persona(dni,nombre,apellido);
-        }
         if(producto==null){
-            producto=new Producto(codigo,nombre,peso);
+            producto=new Producto(codigo,nombre,peso,precio,stock);
         }
         if(compra==null){
             compra=new Compra(codigo,producto,cantidad,fecha);
@@ -67,65 +64,57 @@ public class EnvioTest {
 
     @Test
     public void getCodigoTest() {
-        assertTrue(cliente.getCodigo()==codigo);
+        assertTrue(cliente.getCodigo()==codigo, "El metodo getCodigo no es correcto");
     }
     
     @Test
     public void setCodigoTest() {
         cliente.setCodigo(002);
-        assertTrue(cliente.getCodigo()==002);
+        assertTrue(cliente.getCodigo()==002, "El metodo setCodigo no es correcto");
     }
 
     @Test
     public void getFechaTest() {
-        assertTrue(compra.getFecha().equals(fecha));
+        assertTrue(compra.getFecha().equals(fecha), "El metodo getFecha no es correcto");
     }    
 
     @Test
     public void setFechaTest() {
-        Fecha fecha2=new Fecha(04,05,2021);
-        compra.setFecha(fecha2);
-        assertTrue(compra.getFecha().equals(fecha2));
+        compra.setFecha(fecha);
+        assertTrue(compra.getFecha().equals(fecha), "El metodo setFecha no es correcto");
     }
 
     @Test
     public void getDestinatarioTest() {
-        assertTrue(envio.getDestinatario().equals(cliente));
+        assertTrue(envio.getDestinatario().equals(cliente), "El getDestinatario no es correcto");
     }
     
     @Test
     public void setDestinatarioTest() {
-        Persona persona1=new Persona("12L","Maria",
-        "Lopez");
-        Cliente cliente1=new Cliente(002,persona1,"Calle 2");
-        envio.setDestinatario(cliente1);
-        assertTrue(envio.getDestinatario().equals(cliente1));
+        envio.setDestinatario(cliente);
+        assertTrue(envio.getDestinatario().equals(cliente),"El metodo set destinatario no es correcto");
     }
 
     @Test
     public void getEstadoTest() {
-        assertTrue(envio.getEstado().equals(estado));
+        assertTrue(envio.getEstado().equals(estado), "El metodo getEstado no es correcto");
     }    
 
     @Test
     public void setEstadoTest() {
         String estado1="Enviado";
         envio.setEstado(estado1);
-        assertTrue(envio.getEstado().equals(estado1));
+        assertTrue(envio.getEstado().equals(estado1), "El metodo setEstado no es correcto");
     }
     
     @Test
     public void getPedidoTest() {
-        assertTrue(envio.getPedido().equals(compra));
+        assertTrue(envio.getPedido().equals(compra), "El metodo getPedido no es correcto");
     }    
 
     @Test
     public void setPedidoTest() {
-        Producto producto1 = new Producto(002,"Carpeta",200);
-        Fecha fecha1 = new Fecha(03,12,2019);
-        Compra compra1=new Compra(002,producto1,4,fecha1);;
-        envio.setPedido(compra1);
-        assertTrue(envio.getPedido().equals(compra1));
+        envio.setPedido(compra);
+        assertTrue(envio.getPedido().equals(compra));
     }
-*/
 }

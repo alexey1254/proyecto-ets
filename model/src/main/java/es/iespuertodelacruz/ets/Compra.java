@@ -3,6 +3,7 @@ package es.iespuertodelacruz.ets;
 /**
  * @author Alejandro
  * Clase compra
+ * TODO: TESTS
  */
 
 public class Compra {

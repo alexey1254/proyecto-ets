@@ -4,7 +4,7 @@ package es.iespuertodelacruz.ets;
  * Clase Cliente.
  * @author Grace
  */
-public class Cliente extends Persona{
+public class Cliente extends Persona {
     private int codigo;
     private String direccion;
     
@@ -26,6 +26,9 @@ public class Cliente extends Persona{
      */
     public int getCodigo() {
         return codigo;
+    }
+    public void setCodigo(int codigo) {
+        this.codigo=codigo;
     }
 
     /**
