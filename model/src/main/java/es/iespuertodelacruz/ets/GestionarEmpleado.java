@@ -39,14 +39,14 @@ public class GestionarEmpleado {
      * @param codigo Codigo del empleado que se desea buscar
      * @param empleados Lista de empleados
      * @return Devuelve al empleado relacionado con el codigo
+     * @throws Exception
      */
-    public Empleado verEmpleado(int codigo, List<Empleado> empleados) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                return emp;
-            }
-        }
-        return null;
+    public Empleado verEmpleado(int codigo, List<Empleado> empleados) throws Exception {
+        
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        return empleados.get(posicion);
     }
 
     /**
@@ -61,6 +61,8 @@ public class GestionarEmpleado {
      */
     public void altaEmpleado(int codigo,String dni, String nombre, String apellido1, String apellido2, Fecha fechNac, String cargo) {
         boolean existe=false;
+
+        
         for (Empleado emp : empleados) {
             if (emp.getCodigo() == codigo) {
                 existe=true;
@@ -74,13 +76,14 @@ public class GestionarEmpleado {
     /**
      * Método que permite eliminar o dar de baja a un empleado si existe.
      * @param codigo Codigo del empleado a dar de baja
+     * @throws Exception
      */
-    public void bajaEmpleado(int codigo) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                empleados.remove(emp);
-            }
-        }
+    public void bajaEmpleado(int codigo) throws Exception {
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.remove(posicion);
+       
     }
 
     /**
@@ -89,13 +92,13 @@ public class GestionarEmpleado {
      * 
      * @param codigo Codigo del empleado a editar.
      * @param dni Nuevo dni del empleado.
+     * @throws Exception
      */
-    public void editarDniEmpleado(int codigo,String dni) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                emp.setDni(dni);
-            }
-        }
+    public void editarDniEmpleado(int codigo,String dni) throws Exception {
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.get(posicion).setDni(dni);
     }
 
     /**
@@ -104,13 +107,13 @@ public class GestionarEmpleado {
      * 
      * @param codigo Codigo del empleado a editar.
      * @param nombre Nuevo nombre del empleado.
+     * @throws Exception
      */
-    public void editarNombreEmpleado(int codigo,String nombre) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                emp.setNombre(nombre);
-            }
-        }
+    public void editarNombreEmpleado(int codigo,String nombre) throws Exception {
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.get(posicion).setNombre(nombre);
     }
 
     /**
@@ -119,13 +122,13 @@ public class GestionarEmpleado {
      * 
      * @param codigo Codigo del empleado a editar.
      * @param apellido1 Nuevo primer apellido del empleado.
+     * @throws Exception
      */
-    public void editarApellido1Empleado(int codigo,String apellido1) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                emp.setApellido1(apellido1);
-            }
-        }
+    public void editarApellido1Empleado(int codigo,String apellido1) throws Exception {
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.get(posicion).setApellido1(apellido1);
     }
 
     /**
@@ -134,13 +137,13 @@ public class GestionarEmpleado {
      * 
      * @param codigo Codigo del empleado a editar.
      * @param apellido2 Nuevo segundo apellido del empleado.
+     * @throws Exception
      */
-    public void editarApellido2Empleado(int codigo,String apellido2) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                emp.setApellido2(apellido2);
-            }
-        }
+    public void editarApellido2Empleado(int codigo,String apellido2) throws Exception {
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.get(posicion).setApellido2(apellido2);
     }
 
     /**
@@ -149,13 +152,15 @@ public class GestionarEmpleado {
      * 
      * @param codigo Codigo del empleado a editar.
      * @param fecha Nuevo fecha de nacimiento del empleado.
+     * @throws Exception
      */
-    public void editarFechNacEmpleado(int codigo,Fecha fecha) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                emp.setFechNac(fecha);
-            }
-        }
+    public void editarFechNacEmpleado(int codigo,Fecha fecha) throws Exception {
+
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.get(posicion).setFechNac(fecha);
+        
     }
 
     /**
@@ -164,12 +169,34 @@ public class GestionarEmpleado {
      * 
      * @param codigo Codigo del empleado a editar.
      * @param cargo Nuevo cargo del empleado.
+     * @throws Exception
      */
-    public void editarFechNacEmpleado(int codigo,String cargo) {
-        for (Empleado emp : empleados) {
-            if (emp.getCodigo() == codigo) {
-                emp.setCargo(cargo);
-            }
-        }
+    
+    public void editarCargo(int codigo,String cargo) throws Exception {
+        Integer posicion = null;
+
+        posicion = encontrarEmpleado(codigo);
+        empleados.get(posicion).setCargo(cargo);
+
     }
+    
+    public Integer encontrarEmpleado(int codigo) throws Exception {
+        boolean encontrado=false;
+        int i=0;
+        while(i<empleados.size() || !encontrado){
+            Empleado empleado = empleados.get(i);
+            if (empleado.getCodigo() == codigo) {
+               return i;
+            }
+            i++;
+        }
+        
+        if (encontrado == false) {
+            throw new Exception("No se ha encontrado");
+        }
+        return i;
+    
+    }
+
+    
 }

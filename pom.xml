@@ -164,7 +164,7 @@
   <modules>
             
     
-    <!--<module>vista</module>-->
+    <module>vista</module>
             
     
     <module>model</module>

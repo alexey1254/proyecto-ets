@@ -49,7 +49,7 @@ public class EmpleadoTest {
     public void setDniTest() {
         String dni="3243X";
         empleado.setDni(dni);
-        assertTrue(empleado.getCargo().equals(cargo));
+        assertTrue(empleado.getDni().equals(dni));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class EmpleadoTest {
     public void setNombreTest() {
         String nombre="Juana";
         empleado.setNombre(nombre);
-        assertTrue(empleado.getCargo().equals(cargo));
+        assertTrue(empleado.getNombre().equals(nombre));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class EmpleadoTest {
     public void setApellido1Test() {
         String apellido1="Lopez";
         empleado.setApellido1(apellido1);
-        assertTrue(empleado.getCargo().equals(cargo));
+        assertTrue(empleado.getApellido1().equals(apellido1));
     }
     
     @Test
@@ -85,7 +85,7 @@ public class EmpleadoTest {
     public void setApellido2Test() {
         String apellido2="Díaz";
         empleado.setApellido2(apellido2);
-        assertTrue(empleado.getCargo().equals(cargo));
+        assertTrue(empleado.getApellido2().equals(apellido2));
     }
     
     @Test
