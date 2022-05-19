@@ -9,6 +9,8 @@ public class Proveedor {
     private int codigo;
     private String cif;
     private String nombre;
+    private String direccion;
+    private int telefono;
 
     /**
      * Constructor vacio de la clase
@@ -23,10 +25,12 @@ public class Proveedor {
      * @param cif del proveedor
      * @param nombre del proveedor
      */
-    public Proveedor(int codigo, String cif, String nombre) {
+    public Proveedor(int codigo, String cif, String nombre, String direccion, int telefono) {
         this.codigo = codigo;
         this.cif = cif;
         this.nombre = nombre;
+        this.direccion=direccion;
+        this.telefono=telefono;
     }
 
     /**

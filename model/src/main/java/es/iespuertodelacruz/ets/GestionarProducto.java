@@ -27,6 +27,7 @@ public class GestionarProducto {
             productos.add(new Producto(Integer.parseInt(lineaDatos[0]), lineaDatos[1], 
                 Double.parseDouble(lineaDatos[2]), Double.parseDouble(lineaDatos[3]),Integer.parseInt(lineaDatos[4])));
         }
+        fichero.close();
         return productos;
     }
 
