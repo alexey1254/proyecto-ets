@@ -15,9 +15,9 @@ public class GestionarCliente {
      * @param ficheroClientes Nombre del fichero de clientes
      * @throws FileNotFoundException Excepcion indicando que el fichero no existe
      */
-    public List<Cliente> leerClientes(String ficheroClientes) throws FileNotFoundException, URISyntaxException {
+    public List<Cliente> leerClientes() throws FileNotFoundException, URISyntaxException {
         List<Cliente> clientes= new ArrayList<>();
-        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero(ficheroClientes)));
+        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("cliente.txt")));
         String linea;
         String[] lineaDatos;
         fichero.nextLine();

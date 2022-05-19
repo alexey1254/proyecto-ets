@@ -38,11 +38,27 @@ public class Producto {
     }
 
     /**
+     * Getter del nombre del producto
+     * @return nombre del producto
+     */
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    /**
      * Setter del nombre del producto
      * @param nombre del producto
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+     * Getter del peso del producto
+     * @return peso del producto
+     */
+    public Double getPeso() {
+        return this.peso;
     }
 
     /**
@@ -54,6 +70,14 @@ public class Producto {
     }
 
     /**
+     * Getter del precio del producto
+     * @return precio del producto
+     */
+    public Double getPrecio() {
+        return this.precio;
+    }
+    
+    /**
      * Setter del precio del producto
      * @param precio del producto
      */
@@ -61,6 +85,14 @@ public class Producto {
         this.precio = precio;
     }
 
+    /**
+     * Getter del stock del producto
+     * @return stock del producto
+     */
+    public int getStock() {
+        return this.stock;
+    }
+    
     /**
      * Setter del stock del producto
      * @param stock del producto

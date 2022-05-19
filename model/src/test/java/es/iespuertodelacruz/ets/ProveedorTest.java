@@ -6,11 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.iespuertodelacruz.ets.vista.Proveedor;
-
 
 public class ProveedorTest {
-    private static final int codigo = 001;
+    /*private static final int codigo = 001;
     private static final String cif = "123A";
     private static final String nombre = "Marina S.L";
     Proveedor proveedor;
@@ -67,6 +65,6 @@ public class ProveedorTest {
         String nombre1="Maderas Perez";
         proveedor.setNombre(nombre1);
         assertTrue(proveedor.getNombre().equals(nombre1));
-    }
+    }*/
 
 }

@@ -9,7 +9,7 @@
 
   <artifactId>vontrolador</artifactId>
 
-  <name>modulo controlador</name>
+  <name>Modulo Controlador</name>
   <url>${web}</url>
  
 </project>

@@ -9,7 +9,7 @@
 
   <artifactId>vista</artifactId>
 
-  <name>modulo vista</name>
+  <name>Modulo Vista</name>
   <url>${web}</url>
  
 </project>

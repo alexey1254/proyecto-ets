@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets.vista;
+package es.iespuertodelacruz.ets;
 
 /**
  * @author Alejandro

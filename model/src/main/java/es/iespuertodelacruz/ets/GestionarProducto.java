@@ -15,9 +15,9 @@ public class GestionarProducto {
      * @param ficheroProductos Nombre del fichero de Productos
      * @throws FileNotFoundException Excepcion indicando que el fichero no existe
      */
-    public List<Producto> leerProductos(String ficheroProductos) throws FileNotFoundException, URISyntaxException {
+    public List<Producto> leerProductos() throws FileNotFoundException, URISyntaxException {
         List<Producto> productos= new ArrayList<>();
-        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero(ficheroProductos)));
+        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("producto.txt")));
         String linea;
         String[] lineaDatos;
         fichero.nextLine();

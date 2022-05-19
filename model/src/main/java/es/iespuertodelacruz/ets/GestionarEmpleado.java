@@ -14,9 +14,9 @@ public class GestionarEmpleado {
      * @param ficheroEmpleados Nombre del fichero de empleados
      * @throws FileNotFoundException Excepcion indicando que el fichero no existe
      */
-    public List<Empleado> leerEmpleados(String ficheroEmpleados) throws FileNotFoundException, URISyntaxException {
+    public List<Empleado> leerEmpleados() throws FileNotFoundException, URISyntaxException {
         List<Empleado> empleados= new ArrayList<>();
-        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero(ficheroEmpleados)));
+        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("empleado.txt")));
         String linea,fechaString;
         Fecha fecha;
         String[] lineaDatos,fechaDatos;
@@ -26,7 +26,7 @@ public class GestionarEmpleado {
             lineaDatos = linea.split(",");
             fechaString=lineaDatos[5];
             fechaDatos=fechaString.split("/");
-            fecha=new Fecha(Integer.parseInt(fechaDatos[0]), Integer.parseInt(fechaDatos[1]), Integer.parseInt(fechaDatos[2]))
+            fecha=new Fecha(Integer.parseInt(fechaDatos[0]), Integer.parseInt(fechaDatos[1]), Integer.parseInt(fechaDatos[2]));
 
             empleados.add(new Empleado(Integer.parseInt(lineaDatos[0]), lineaDatos[1], lineaDatos[2],
                     lineaDatos[3], lineaDatos[4],fecha,lineaDatos[6]));

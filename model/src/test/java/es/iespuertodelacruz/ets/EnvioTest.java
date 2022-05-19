@@ -13,7 +13,7 @@ import es.iespuertodelacruz.ets.Fecha;
 import es.iespuertodelacruz.ets.Producto;
 
 public class EnvioTest {
-    private static final int codigo = 001;
+/*    private static final int codigo = 001;
     private static final int peso = 1500;
     private static final int cantidad = 1;
     private static final String estado = "En camino";
@@ -127,5 +127,5 @@ public class EnvioTest {
         envio.setPedido(compra1);
         assertTrue(envio.getPedido().equals(compra1));
     }
-
+*/
 }

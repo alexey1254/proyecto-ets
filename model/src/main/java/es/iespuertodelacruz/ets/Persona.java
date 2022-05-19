@@ -37,19 +37,43 @@ public abstract class Persona {
     }
 
     /**
+     * Getter del dni de la persona
+     * @return Devuelve el dni de la persona
+     */
+    public String getDni() {
+        return this.dni;
+    }
+
+    /**
      * Setter del dni de la persona
      * @param dni Nuevo dni de la persona
      */
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
+
+    /**
+    * Getter del nombre de la persona
+    * @return Devuelve el nombre de la persona
+    */
+    public String getNombre() {
+        return this.nombre;
+    }
+
     /**
      * Setter del nombre de la persona
      * @param nombre Nuevo nombre de la persona
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+    * Getter del primer apellido de la persona
+    * @return Devuelve el primer apellido de la persona
+    */
+    public String getApellido1() {
+        return this.apellido1;
     }
 
     /**
@@ -60,6 +84,14 @@ public abstract class Persona {
         this.apellido1 = apellido1;
     }
 
+    /**
+    * Getter del segundo apellido de la persona
+    * @return Devuelve el segundo apellido de la persona
+    */
+    public String getApellido2() {
+        return this.apellido2;
+    }
+    
     /**
      * Setter del segundo apellido de la persona
      * @param apellido2 Nuevo segundo apellido de la persona

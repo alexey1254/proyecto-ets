@@ -29,10 +29,18 @@ public class Empleado extends Persona {
 
     /**
      * Getter del codigo del empleado
-     * @return codigo del empleado
+     * @return Devuelve codigo del empleado
      */
     public int getCodigo() {
-        return codigo;
+        return this.codigo;
+    }
+
+    /**
+     * Getter del dni del empleado
+     * @return Devuelve el dni del empleado
+     */
+    public String getDni() {
+        return super.getDni();
     }
 
     /**
@@ -44,11 +52,27 @@ public class Empleado extends Persona {
     }
 
     /**
+     * Getter del nombre del empleado
+     * @return Devuelve el nombre del empleado
+     */
+    public String getNombre() {
+        return super.getNombre();
+    }
+
+    /**
      * Setter del nombre del empleado
      * @param nombre Nuevo nombre del empleado
      */
     public void setNombre(String nombre) {
         super.setNombre(nombre);
+    }
+
+    /**
+     * Getter del apellido1 del empleado
+     * @return Devuelve el primer apellido del empleado
+     */
+    public String getApellido1() {
+        return super.getApellido1();
     }
 
     /**
@@ -60,18 +84,43 @@ public class Empleado extends Persona {
     }
 
     /**
+     * Getter del apellido2 del empleado
+     * @return Devuelve el segundo apellido del empleado
+     */
+    public String getApellido2() {
+        return super.getApellido2();
+    }
+
+    /**
      * Setter del segundo apellido del empleado
      * @param apellido2 Nuevo segundo apellido del empleado
      */
     public void setApellido2(String apellido2) {
         super.setApellido2(apellido2);
     }
+
+    /**
+     * Getter de la fecha de nacimiento del empleado
+     * @return Devuelve la fecha de nacimiento del empleado
+     */
+    public Fecha getFechNac() {
+        return this.fechNac;
+    }
+
     /**
      * Setter de la fecha de nacimiento del empleado
      * @param fechNac fecha de nacimiento del empleado
      */
     public void setFechNac(Fecha fechNac) {
         this.fechNac = fechNac;
+    }
+    
+    /**
+     * Getter de la fecha de nacimiento del empleado
+     * @return Devuelve el cargo del empleado
+     */
+    public String getCargo() {
+        return this.cargo;
     }
 
     /**
