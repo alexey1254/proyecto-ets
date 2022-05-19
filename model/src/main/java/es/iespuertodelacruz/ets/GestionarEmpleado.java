@@ -17,6 +17,7 @@ public class GestionarEmpleado {
     public List<Empleado> leerEmpleados() throws FileNotFoundException, URISyntaxException {
         List<Empleado> empleados= new ArrayList<>();
         Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("empleado.txt")));
+        int dia,mes,anio;
         String linea,fechaString;
         Fecha fecha;
         String[] lineaDatos,fechaDatos;
@@ -26,7 +27,10 @@ public class GestionarEmpleado {
             lineaDatos = linea.split(",");
             fechaString=lineaDatos[5];
             fechaDatos=fechaString.split("/");
-            fecha=new Fecha(Integer.parseInt(fechaDatos[0]), Integer.parseInt(fechaDatos[1]), Integer.parseInt(fechaDatos[2]));
+            dia=Integer.parseInt(fechaDatos[0]);
+            mes= Integer.parseInt(fechaDatos[1]);
+            anio= Integer.parseInt(fechaDatos[2]);
+            fecha=new Fecha(dia,mes,anio);
 
             empleados.add(new Empleado(Integer.parseInt(lineaDatos[0]), lineaDatos[1], lineaDatos[2],
                     lineaDatos[3], lineaDatos[4],fecha,lineaDatos[6]));

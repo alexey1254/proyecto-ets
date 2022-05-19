@@ -5,18 +5,11 @@ package es.iespuertodelacruz.ets;
  * Clase envio 
  */
 public class Envio {
-    private int codigo;
+    private String codigo;
     private Fecha fecha;
     private Cliente destinatario;
     private String estado;
     private Compra pedido;
-
-    /**
-     * Constructor vacio
-     */
-    public Envio() {
-
-    }
 
     /**
      * Constructor con parametros
@@ -26,7 +19,7 @@ public class Envio {
      * @param estado del envio
      * @param pedido Lo que compro el cliente, su pedido
      */
-    public Envio(int codigo, Fecha fecha, Cliente destinatario, String estado, Compra pedido) {
+    public Envio(String codigo, Fecha fecha, Cliente destinatario, String estado, Compra pedido) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.destinatario = destinatario;
@@ -38,7 +31,7 @@ public class Envio {
      * Getter del codigo del envio
      * @return Codigo del envio
      */
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
@@ -46,7 +39,7 @@ public class Envio {
      * Setter del codigo del envio
      * @param codigo del envio
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
