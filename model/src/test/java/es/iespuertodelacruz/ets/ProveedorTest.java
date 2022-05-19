@@ -1,18 +1,20 @@
 package es.iespuertodelacruz.ets;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
 public class ProveedorTest {
-    /*private static final int codigo = 001;
+
+    private static final int codigo = 001;
     private static final String cif = "123A";
     private static final String nombre = "Marina S.L";
     Proveedor proveedor;
-    
+
     @BeforeEach
     public void BeforeEach() { 
         if(proveedor==null){
@@ -22,49 +24,40 @@ public class ProveedorTest {
 
     @Test
     public void constructorVacioProveedorTest() {
-        Proveedor proveedor1 = new Proveedor();
-        assertNotNull(proveedor1, "El objeto Proveedor debe ser nulo");
+        Proveedor proveedorVacio = new Proveedor();
+        assertNull(proveedorVacio.getCif(), "El objeto Proveedor debe ser nulo");
     }
 
     @Test
-    public void constructorTresParametrosProveedorTest() {
-        assertNotNull(proveedor, "El objeto Proveedor no puede ser nulo");
-    }
-    
-    @Test
-    public void getCodigoTest() {
-        assertTrue(proveedor.getCodigo()==codigo);
-    }    
-
-    @Test
-    public void setCodigoTest() {
-        int codigo1=002;
-        proveedor.setCodigo(codigo1);
-        assertTrue(proveedor.getCodigo()==codigo1);
+    void testGetCif() {
+        assertSame(cif, proveedor.getCif(), "Se esperaba el cif  123A");
     }
 
     @Test
-    public void getCifTest() {
-        assertTrue(proveedor.getCif().equals(cif));
-    }    
-
-    @Test
-    public void setCifTest() {
-        String cif1="3821B";
-        proveedor.setCif(cif1);
-        assertTrue(proveedor.getCif().equals(cif1));
+    void testGetCodigo() {
+        assertEquals(codigo, proveedor.getCodigo(), "Se esperaba el codigo 001");
     }
 
     @Test
-    public void getNombreTest() {
-        assertTrue(proveedor.getNombre().equals(nombre));
-    }    
+    void testGetNombre() {
+        assertSame(nombre, proveedor.getNombre(), "Se esperaba el nombre Marina S.L");
+    }
 
     @Test
-    public void setNombreTest() {
-        String nombre1="Maderas Perez";
-        proveedor.setNombre(nombre1);
-        assertTrue(proveedor.getNombre().equals(nombre1));
-    }*/
+    void testSetCif() {
+        proveedor.setCif("1212R");
+        assertEquals("1212R",proveedor.getCif(), "Se esperaba el cif 1212R");
+    }
 
+    @Test
+    void testSetCodigo() {
+        proveedor.setCodigo(1234);
+        assertEquals(1234, proveedor.getCodigo(), "Se esperaba el codigo 1234");
+    }
+
+    @Test
+    void testSetNombre() {
+        proveedor.setNombre("Alejandrinio");
+        assertEquals("Alejandrinio", proveedor.getNombre(), "Se esperaba el nombre Alejandrinio");
+    }
 }

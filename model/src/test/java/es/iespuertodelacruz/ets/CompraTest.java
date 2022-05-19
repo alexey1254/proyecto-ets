@@ -1,13 +1,14 @@
 package es.iespuertodelacruz.ets;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CompraTest {
-  /*  private static final int codigo = 001;
+
+    private static final int codigo = 001;
     private static final int cantidad = 2;
     private static final int codigoP = 001;
     private static final String nombre = "Bolsa";
@@ -20,7 +21,7 @@ public class CompraTest {
     Compra compra;
     Producto producto;
     Fecha fecha;
-    
+
     @BeforeEach
     public void BeforeEach() {
         if(producto==null){
@@ -35,61 +36,46 @@ public class CompraTest {
     }
 
     @Test
-    public void constructorVacioCompraTest() {
-        compra = new Compra();
-        assertNotNull(compra, "El objeto Compra debe ser nulo");
+    void testGetCantidad() {
+        assertEquals(cantidad, compra.getCantidad(), "Se esperaba la cantidad de 2");
     }
 
     @Test
-    public void constructorCuatroParametrosCompraTest() {
-        assertNotNull(compra, "El objeto Compra no puede ser nulo");
+    void testGetFecha() {
+        assertEquals(fecha, compra.getFecha(), "Se esperaba la fecha 26/02/2020");
     }
 
     @Test
-    public void getNumFacturaTest() {
-        assertTrue(compra.getNumFactura()==001);
-    }
-    
-    @Test
-    public void setNumFacturaTest() {
-        compra.setNumFactura(002);
-        assertTrue(compra.getNumFactura()==002);
+    void testGetNumFactura() {
+        assertEquals(001, compra.getNumFactura(), "Se esperaba el numero de factura 001");
     }
 
     @Test
-    public void getProductoTest() {
-        assertTrue(compra.getProducto().equals(producto));
-    }    
-
-    @Test
-    public void setProductoTest() {
-        Producto producto2=new Producto(002,"Cartera",200);
-        compra.setProducto(producto2);
-        assertTrue(compra.getProducto().equals(producto2));
-    }
-    
-    @Test
-    public void getCantidadTest() {
-        assertTrue(compra.getCantidad()==2);
-    }    
-
-    @Test
-    public void setCantidadTest() {
-        int cantidad2=5;
-        compra.setCantidad(cantidad2);
-        assertTrue(compra.getCantidad()==cantidad2);
+    void testGetProducto() {
+        assertEquals(producto, compra.getProducto(), "Se esperaba el producto definido como variable local en el beforeEach");
     }
 
     @Test
-    public void getFechaTest() {
-        assertTrue(compra.getFecha().equals(fecha));
-    }    
+    void testSetCantidad() {
+        compra.setCantidad(4);
+        assertEquals(4, compra.getCantidad(), "Se esperaba la cantidad de 4");
+    }
 
     @Test
-    public void setFechaTest() {
-        Fecha fecha2=new Fecha(04,05,2021);
-        compra.setFecha(fecha2);
-        assertTrue(compra.getFecha().equals(fecha2));
-    }*/
+    void testSetFecha() {
+        Fecha fechaTest = new Fecha(2, 3, 2001);
+        compra.setFecha(fechaTest);
+        assertEquals(fechaTest, compra.getFecha(), "Se esperaba la fecha 2/3/2001");
+    }
 
+    @Test
+    void testSetNumFactura() {
+        compra.setNumFactura(400);
+        assertEquals(400, compra.getNumFactura(), "Se esperaba el numero de factura 400");
+    }
+
+    @Test
+    void testSetProducto() {
+        assertEquals(producto, compra.getProducto(), "Se esperaba el producto definido en el beforeEach");
+    }
 }
