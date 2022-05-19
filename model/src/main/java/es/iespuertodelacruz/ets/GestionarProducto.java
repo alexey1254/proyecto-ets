@@ -6,6 +6,10 @@ import java.util.*;
 
 import es.iespuertodelacruz.ets.utilidades.Utilidades;
 
+/**
+ * Clase que sera usada para gestionar el producto
+ * @author Grace
+ */
 public class GestionarProducto {
     private List<Producto> productos = new ArrayList<>();
 
@@ -35,14 +39,12 @@ public class GestionarProducto {
      * @param codigo Codigo del producto que se desea buscar
      * @param productos Lista de productos
      * @return Devuelve el producto relacionado con el codigo
+     * @throws Exception Excepcion en caso de no encontrar al producto
      */
-    public Producto verProducto(int codigo, List<Producto> productos) {
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
-                return pro;
-            }
-        }
-        return null;
+    public Producto verProducto(int codigo, List<Producto> productos) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarProducto(codigo);
+        return productos.get(posicion);
     }
 
     /**
@@ -55,26 +57,26 @@ public class GestionarProducto {
      */
     public void altaProducto(int codigo, String nombre, double peso, double precio, int stock) {
         boolean existe=false;
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
+
+        for (Producto producto : productos) {
+            if (producto.getCodigo() == codigo) {
                 existe=true;
             }
         }
         if(!existe){
-            productos.add(new Producto(codigo, nombre, peso, precio, stock));
+            productos.add(new Producto(codigo, nombre, peso,precio,stock));
         }
     }
 
     /**
      * Método que permite eliminar o dar de baja a un producto si existe.
      * @param codigo Codigo del producto a dar de baja
+     * @throws Exception Excepcion en caso de no encontrar al producto
      */
-    public void bajaProducto(int codigo) {
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
-               productos.remove(pro);
-            }
-        }
+    public void bajaProducto(int codigo) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarProducto(codigo);
+        productos.remove(posicion);
     }
 
     /**
@@ -83,13 +85,12 @@ public class GestionarProducto {
      * 
      * @param codigo Codigo del producto a editar.
      * @param nombre Nuevo nombre del producto.
+     * @throws Exception Excepcion en caso de no encontrar al producto
      */
-    public void editarNombreProducto(int codigo,String nombre) {
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
-                pro.setNombre(nombre);
-            }
-        }
+    public void editarNombreProducto(int codigo,String nombre) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarProducto(codigo);
+        productos.get(posicion).setNombre(nombre);
     }
 
     /**
@@ -98,13 +99,12 @@ public class GestionarProducto {
      * 
      * @param codigo Codigo del producto a editar.
      * @param peso Nuevo peso del producto.
+     * @throws Exception Excepcion en caso de no encontrar al producto
      */
-    public void editarPesoProducto(int codigo,double peso) {
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
-                pro.setPeso(peso);
-            }
-        }
+    public void editarPesoProducto(int codigo,double peso) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarProducto(codigo);
+        productos.get(posicion).setPeso(peso);
     }
 
     /**
@@ -113,13 +113,12 @@ public class GestionarProducto {
      * 
      * @param codigo Codigo del producto a editar.
      * @param precio Nuevo precio del producto.
+     * @throws Exception Excepcion en caso de no encontrar al producto
      */
-    public void editarPrecioProducto(int codigo,double precio) {
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
-                pro.setPrecio(precio);
-            }
-        }
+    public void editarPrecioProducto(int codigo,double precio) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarProducto(codigo);
+        productos.get(posicion).setPrecio(precio);
     }
 
     /**
@@ -128,14 +127,31 @@ public class GestionarProducto {
      * 
      * @param codigo Codigo del producto a editar.
      * @param stock Nuevo stock del producto.
+     * @throws Exception Excepcion en caso de no encontrar al producto
      */
-    public void editarStockProducto(int codigo,int stock) {
-        for (Producto pro : productos) {
-            if (pro.getCodigo() == codigo) {
-                pro.setStock(stock);
-            }
-        }
+    public void editarStockProducto(int codigo,int stock) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarProducto(codigo);
+        productos.get(posicion).setStock(stock);
     }
 
+    /**
+     * Comprueba si existe el producto en la lista
+     * 
+     * @param codigo codigo del producto a comprobar
+     * @return Devuelve la posicion del producto en la lista
+     * @throws Exception Excepcion en caso de no encontrar al producto
+     */
+    public Integer encontrarProducto(int codigo) throws Exception {
+        int i=0;
+        while(i<productos.size()){
+            Producto producto = productos.get(i);
+            if (producto.getCodigo() == codigo) {
+               return i;
+            }
+            i++;
+        }
+        throw new Exception("No se ha encontrado el producto.");
+    }    
 
 }

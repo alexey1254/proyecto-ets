@@ -6,6 +6,10 @@ import java.util.*;
 
 import es.iespuertodelacruz.ets.utilidades.Utilidades;
 
+/**
+ * Clase que sera usada para gestionar al cliente
+ * @author Grace
+ */
 public class GestionarCliente {
     private List<Cliente> clientes = new ArrayList<>();
 
@@ -69,13 +73,13 @@ public class GestionarCliente {
     /**
      * Método que permite eliminar o dar de baja a un cliente si existe.
      * @param codigo Codigo del cliente a dar de baja
+     * @throws Exception Excepcion en caso de no encontrar al cliente
      */
-    public void bajaCliente(int codigo) {
-        for (Cliente cli : clientes) {
-            if (cli.getCodigo() == codigo) {
-                clientes.remove(cli);
-            }
-        }
+    public void bajaCliente(int codigo) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarCliente(codigo);
+        clientes.remove(posicion);
+ 
     }
 
     /**
@@ -84,13 +88,12 @@ public class GestionarCliente {
      * 
      * @param codigo Codigo del cliente a editar.
      * @param dni Nuevo dni del cliente.
+     * @throws Exception Excepcion en caso de no encontrar al cliente
      */
-    public void editarDniCliente(int codigo,String dni) {
-        for (Cliente cli : clientes) {
-            if (cli.getCodigo() == codigo) {
-                cli.setDni(dni);
-            }
-        }
+    public void editarDniCliente(int codigo,String dni) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarCliente(codigo);
+        clientes.get(posicion).setDni(dni);
     }
 
     /**
@@ -99,13 +102,12 @@ public class GestionarCliente {
      * 
      * @param codigo Codigo del cliente a editar.
      * @param nombre Nuevo nombre del cliente.
+     * @throws Exception Excepcion en caso de no encontrar al cliente
      */
-    public void editarNombreCliente(int codigo,String nombre) {
-        for (Cliente cli : clientes) {
-            if (cli.getCodigo() == codigo) {
-                cli.setNombre(nombre);
-            }
-        }
+    public void editarNombreCliente(int codigo,String nombre) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarCliente(codigo);
+        clientes.get(posicion).setNombre(nombre);
     }
 
     /**
@@ -114,13 +116,12 @@ public class GestionarCliente {
      * 
      * @param codigo Codigo del cliente a editar.
      * @param apellido1 Nuevo primer apellido del cliente.
+     * @throws Exception Excepcion en caso de no encontrar al cliente
      */
-    public void editarApellido1Cliente(int codigo,String apellido1) {
-        for (Cliente cli : clientes) {
-            if (cli.getCodigo() == codigo) {
-                cli.setApellido1(apellido1);
-            }
-        }
+    public void editarApellido1Cliente(int codigo,String apellido1) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarCliente(codigo);
+        clientes.get(posicion).setApellido1(apellido1);
     }
 
     /**
@@ -129,13 +130,31 @@ public class GestionarCliente {
      * 
      * @param codigo Codigo del cliente a editar.
      * @param apellido2 Nuevo segundo apellido del cliente.
+     * @throws Exception Excepcion en caso de no encontrar al cliente
      */
-    public void editarApellido2Cliente(int codigo,String apellido2) {
-        for (Cliente cli : clientes) {
-            if (cli.getCodigo() == codigo) {
-                  cli.setApellido2(apellido2);
-            }
-        }
+    public void editarApellido2Cliente(int codigo,String apellido2) throws Exception {
+        Integer posicion = null;
+        posicion = encontrarCliente(codigo);
+        clientes.get(posicion).setApellido2(apellido2);
     }
 
+    /**
+     * Comprueba si existe el cliente en la lista
+     * 
+     * @param codigo codigo del cliente a comprobar
+     * @return Devuelve la posicion del cliente en la lista
+     * @throws Exception Excepcion en caso de no encontrar al cliente
+     */
+    public Integer encontrarCliente(int codigo) throws Exception {
+        int i=0;
+        while(i<clientes.size()){
+            Cliente cliente = clientes.get(i);
+            if (cliente.getCodigo() == codigo) {
+               return i;
+            }
+            i++;
+        }
+        throw new Exception("No se ha encontrado el cliente.");
+        
+    }   
 }
