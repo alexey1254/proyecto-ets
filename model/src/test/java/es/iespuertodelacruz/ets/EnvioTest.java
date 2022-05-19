@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.iespuertodelacruz.ets.vista.Cliente;
-import es.iespuertodelacruz.ets.vista.Compra;
-import es.iespuertodelacruz.ets.vista.Envio;
-import es.iespuertodelacruz.ets.vista.Fecha;
-import es.iespuertodelacruz.ets.vista.Producto;
+import es.iespuertodelacruz.ets.Cliente;
+import es.iespuertodelacruz.ets.Compra;
+import es.iespuertodelacruz.ets.Envio;
+import es.iespuertodelacruz.ets.Fecha;
+import es.iespuertodelacruz.ets.Producto;
 
 public class EnvioTest {
     private static final int codigo = 001;

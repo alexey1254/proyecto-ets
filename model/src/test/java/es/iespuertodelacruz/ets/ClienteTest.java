@@ -3,28 +3,23 @@ package es.iespuertodelacruz.ets;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import es.iespuertodelacruz.ets.vista.Cliente;
 
 public class ClienteTest {
-    private static final String direccion = "Calle 1";
     private static final int codigo = 001;
-    private static final String apellido = "Perez";
-    private static final String nombre = "Juan";
     private static final String dni = "12345Z";
+    private static final String nombre = "Juan";
+    private static final String apellido1 = "Perez";
+    private static final String apellido2 = "Lopez";
+    private static final String direccion = "Calle 1";
     Cliente cliente;
-    Persona persona;
     
     @BeforeEach
     public void BeforeEach() {
  
-        if(persona==null){
-            persona=new Persona(dni,nombre,apellido);
-        }
         if(cliente==null){
-            cliente=new Cliente(codigo,persona,direccion);
+            cliente=new Cliente(codigo,dni,nombre,apellido1,apellido2,direccion);
         }
     }
 
@@ -39,32 +34,37 @@ public class ClienteTest {
     }
     
     @Test
-    public void setCodigoTest() {
-        cliente.setCodigo(002);
-        assertTrue(cliente.getCodigo()==002);
+    public void setDniTest() {
+        String dni="3243X";
+        cliente.setDni(dni);
+        //assertTrue(empleado.getCargo().equals(cargo));
     }
 
     @Test
-    public void getDatosTest() {
-        assertTrue(cliente.getDatos().equals(persona));
-    }    
+    public void setNombreTest() {
+        String nombre="Juana";
+        cliente.setNombre(nombre);
+       // assertTrue(empleado.getCargo().equals(cargo));
+    }
 
     @Test
-    public void setDatosTest() {
-        Persona persona2=new Persona("1234J","Maria","Ramos");
-        cliente.setDatos(persona2);
-        assertTrue(cliente.getDatos().equals(persona2));
+    public void setApellido1Test() {
+        String apellido1="Lopez";
+        cliente.setApellido1(apellido1);
+        //assertTrue(empleado.getCargo().equals(cargo));
     }
     
     @Test
-    public void getDireccionTest() {
-        assertTrue(cliente.getDireccion().equals(direccion));
-    }    
+    public void setApellido2Test() {
+        String apellido2="Díaz";
+        cliente.setApellido2(apellido2);
+        //assertTrue(empleado.getCargo().equals(cargo));
+    }
 
     @Test
     public void setDireccionTest() {
         String direccion2="Calle 2";
         cliente.setDireccion(direccion2);
-        assertTrue(cliente.getDireccion().equals(direccion2));
+     //   assertTrue(cliente.getDireccion().equals(direccion2));
     }
 }

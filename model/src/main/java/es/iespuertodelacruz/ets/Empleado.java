@@ -1,45 +1,27 @@
-package es.iespuertodelacruz.ets.vista;
+package es.iespuertodelacruz.ets;
 
 /**
  * Clase Empleado.
  * @author Grace
  */
 public class Empleado extends Persona {
+
     private int codigo;
     private Fecha fechNac;
     private String cargo;
-    
-    /**
-     * Constructor que recibe dos parametros
-     * @param codigo del empleado
-     * @param datos dni, nombre y/o apellido del empleado
-     */
-    public Empleado(int codigo,String dni, String nombre,String apellido) {
-        super(dni, nombre, apellido);
-        this.codigo = codigo;
-    }
 
     /**
-     * Constructor que recibe tres parametros
-     * @param codigo del empleado
-     * @param datos dni, nombre y/o apellido del empleado
-     * @param fechNac fecha de nacimiento del empleado
-     */
-    public Empleado(int codigo, String dni, String nombre,String apellido, Fecha fechNac) {
-        super(dni, nombre, apellido);
-        this.codigo = codigo;
-        this.fechNac = fechNac;
-    }
-
-    /**
-     * Constructor que recibe cuatro parametros
-     * @param codigo del empleado
-     * @param datos dni, nombre y/o apellido del empleado
+     * Constructor de Empleado que recibe siete parametros
+     * @param codigo Codigo del empleado
+     * @param dni DNI del empleado
+     * @param nombre Nombre del empleado
+     * @param apellido1 Primer apellido del empleado
+     * @param apellido2 Segundo apellido del empleado
      * @param fechNac fecha de nacimiento del empleado
      * @param cargo que ostenta el empleado
      */
-    public Empleado(int codigo, String dni, String nombre,String apellido, Fecha fechNac, String cargo) {
-        super(dni, nombre, apellido);
+    public Empleado(int codigo,String dni, String nombre, String apellido1, String apellido2, Fecha fechNac, String cargo) {
+        super(dni, nombre, apellido1,apellido2);
         this.codigo = codigo;
         this.fechNac = fechNac;
         this.cargo = cargo;
@@ -54,21 +36,36 @@ public class Empleado extends Persona {
     }
 
     /**
-     * Setter del codigo del empleado
-     * @param codigo del empleado
+     * Setter del dni del empleado
+     * @param dni Nuevo dni del empleado
      */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-    
-    /**
-     * Getter de la fecha de nacimiento del empleado
-     * @return fecha de nacimiento
-     */
-    public Fecha getFechNac() {
-        return fechNac;
+    public void setDni(String dni) {
+        super.setDni(dni);
     }
 
+    /**
+     * Setter del nombre del empleado
+     * @param nombre Nuevo nombre del empleado
+     */
+    public void setNombre(String nombre) {
+        super.setNombre(nombre);
+    }
+
+    /**
+     * Setter del primer apellido del empleado
+     * @param apellido1 Nuevo primer apellido del empleado
+     */
+    public void setApellido1(String apellido1) {
+        super.setApellido1(apellido1);
+    }
+
+    /**
+     * Setter del segundo apellido del empleado
+     * @param apellido2 Nuevo segundo apellido del empleado
+     */
+    public void setApellido2(String apellido2) {
+        super.setApellido2(apellido2);
+    }
     /**
      * Setter de la fecha de nacimiento del empleado
      * @param fechNac fecha de nacimiento del empleado
@@ -78,19 +75,10 @@ public class Empleado extends Persona {
     }
 
     /**
-     * Getter del ccargo que ostenta el cliente
-     * @return cargo del cliente
-     */
-    public String getCargo() {
-        return cargo;
-    }
-
-    /**
      * Setter del cargo del empleado
-     * @param cargo del empleado
+     * @param cargo Nuevo cargo del empleado
      */
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-
 }

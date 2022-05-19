@@ -1,26 +1,20 @@
-package es.iespuertodelacruz.ets.vista;
+package es.iespuertodelacruz.ets;
 /**
  * Clase Fecha que inicializa la variable fecha
  * @author Grace
  */
 
 public class Fecha {
+
     private int dia;
     private int mes;
     private int anio;
 
     /**
-     * Constructor vacio
-     */
-    public Fecha() {
-
-    }
-
-    /**
-     * Constructor Fecha que recibe tres parametros
-     * @param dia del mes
-     * @param mes del anio
-     * @param anio al que se refiere la fecha
+     * Constructor de la clase que recibe tres parametros
+     * @param dia dia correspondiente a la fecha indicada
+     * @param mes mes correspondiente a la fecha indicada
+     * @param anio anio correspondiente a la fecha indicada
      */
     public Fecha(int dia, int mes, int anio) {
         this.dia = dia;
@@ -29,51 +23,56 @@ public class Fecha {
     }
 
     /**
-     * Getter del dia 
-     * @return dia de la fecha a la que hace referencia
+     * Comprueba si el mes es valido y el dia es valido, 
+     * en ese caso devuelve verdadero.
+     * 
+     * @return Devuelve un valor booleano
      */
-    public int getDia() {
-        return dia;
+    public boolean valida() {
+        return mesValido() && diaValido() ;
+    }
+  
+    /**
+     * Comprueba si el anio es bisiesto, devuelve verdadero si el anio es 
+     * divisible por 400, o si el anio es divisible por 4 y no por 100
+     * 
+     * @return Devuelve un valor booleano
+     */
+    private boolean esBisiesto() {
+        return (this.anio % 400 == 0) || ( (this.anio % 4 == 0) && (this.anio % 100 != 0) ) ; 
     }
 
     /**
-     * Setter del dia
-     * @param dia de la fecha a la que hace referencia
+     * Comprueba si es mes es valido, Devuelve verdadero si el mes esta entre 1
+     * y 12 ambos incluidos, en otro caso falso
+     * 
+     * @return Devuelve un valor booleano
      */
-    public void setDia(int dia) {
-        this.dia = dia;
+    private boolean mesValido() {
+        return (this.mes >= 1 && this.mes <= 12);
+        
     }
 
     /**
-     * Getter del mes
-     * @return mes de la fecha a la que hace referencia
+     * Devuelve el numero de dias del mes de la fecha
+     * 
+     * @return Numero de dias del mes.
      */
-    public int getMes() {
-        return mes;
+    private int diasPorMes(){
+        int[] diasMes=new int[]{31,28,31,30,31,30,31,31,30,31,30,31};
+            
+        if (esBisiesto()){
+            diasMes[1]=29;
+        }
+        return diasMes[this.mes-1];
     }
 
     /**
-     * Setter del mes
-     * @param mes de la fecha a la que hace referencia
+     * Devuelve verdadero si el día está entre 1 y el número de días del mes
+     * 
+     * @return Devuelve un valor booleano
      */
-    public void setMes(int mes) {
-        this.mes = mes;
+    private boolean diaValido() {
+        return this.dia>=1 && this.dia <= diasPorMes();
     }
-
-    /**
-     * Getter del anio
-     * @return anio de la fecha a la que hace referencia
-     */
-    public int getAnio() {
-        return anio;
-    }
-
-    /**
-     * Setter del anio
-     * @param anio de la fecha a la que hace referencia
-     */
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
-
 }

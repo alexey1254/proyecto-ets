@@ -1,12 +1,11 @@
-package es.iespuertodelacruz.ets.vista;
+package es.iespuertodelacruz.ets;
 
 /**
  * Clase Cliente.
  * @author Grace
  */
-public class Cliente {
+public class Cliente extends Persona{
     private int codigo;
-    private Persona datos;
     private String direccion;
     
     /**
@@ -15,9 +14,9 @@ public class Cliente {
      * @param datos dni, nombre y/o apellido del cliente
      * @param direccion del cliente
      */
-    public Cliente(int codigo, Persona datos, String direccion) {
+    public Cliente(int codigo,String dni, String nombre, String apellido1, String apellido2, String direccion) {
+        super(dni, nombre, apellido1,apellido2);
         this.codigo = codigo;
-        this.datos = datos;
         this.direccion = direccion;
     }
 
@@ -30,47 +29,42 @@ public class Cliente {
     }
 
     /**
-     * Setter del codigo del cliente
-     * @param codigo del cliente
+     * Setter del dni del cliente
+     * @param dni Nuevo dni del cliente
      */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-
-    /**
-     * Getter de los datos del cliente
-     * @return datos del cliente
-     */
-    public Persona getDatos() {
-        return datos;
+    public void setDni(String dni) {
+        super.setDni(dni);
     }
 
     /**
-     * Setter de los datos del cliente
-     * @param datos dni, nombre y/o apellido del cliente
+     * Setter del nombre del cliente
+     * @param nombre Nuevo nombre del cliente
      */
-    public void setDatos(Persona datos) {
-        this.datos = datos;
-    }
-
-
-    /**
-     * Getter de la direccion del cliente
-     * @return codigo del cliente
-     */
-    public String getDireccion() {
-        return direccion;
+    public void setNombre(String nombre) {
+        super.setNombre(nombre);
     }
 
     /**
-     * Setter de la direccion del cliente
-     * @param direccion del cliente
+     * Setter del primer apellido del cliente
+     * @param apellido1 Nuevo primer apellido del cliente
+     */
+    public void setApellido1(String apellido1) {
+        super.setApellido1(apellido1);
+    }
+
+    /**
+     * Setter del segundo apellido del cliente
+     * @param apellido2 Nuevo segundo apellido del cliente
+     */
+    public void setApellido2(String apellido2) {
+        super.setApellido2(apellido2);
+    }
+
+    /**
+     * Setter del cargo del cliente
+     * @param direccion Nueva direccion del cliente
      */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
-  
-
 }
