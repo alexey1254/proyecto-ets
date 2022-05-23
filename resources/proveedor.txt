@@ -1,8 +1,0 @@
-codigoProveedor,cif,nombre,direccion,telefono
-1,W8910151C,Steel Partners Holdings S.L,6531 Welch Drive,645 935 871
-2,G99442345,AutoNation S.A,4 Ramsey Crossing,672 798 999
-3,V99784761,Armada Hoffler Properties S.L,73321 Sycamore Point,722 572 477
-4,D62095781,Herc Holdings S.L,153 Clyde Gallagher Junction,650 900 787
-5,R4006195D,Constellation Brands S.A,69 Mcguire Way,695 991 275
-6,R2396689H,AMN Healthcare Services S.L,9 Pawling Terrace,635 452 727
-7,H80205040,Tesco Corporation S.A,2314 Manitowish Way,665 871 040

@@ -1,0 +1,5 @@
+codigoEmpleado,dni,nombre,apellido1,apellido2,fechaNacimiento,cargo,codigoValidarse
+1,99973586S,Herminia,Emmens,Josipovitz,20/08/1981,cajero,0003
+2,79412916B,Kaylee,Lillicrap,Hendrix,16/07/1979,Auxiliar Tienda,0004 
+3,84510227Q,Merci,Dumphries,Elmar,31/07/2000,Auxiliar Tienda,0005
+4,94760645R,Ray,Assard,Balogun,01/03/2002,cajero,0006

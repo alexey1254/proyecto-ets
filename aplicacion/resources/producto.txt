@@ -1,0 +1,21 @@
+codigoProducto,nombre,peso,precio,stock
+00001,Wine - Pinot Noir Latour,63.57,€1,37,77
+00002,Appetizer - Mango Chevre,28.83,€79,77,86
+00003,Cloves - Ground,22.67,€31,69,79
+00004,Tea - Herbal I Love Lemon,9.84,€98,24,50
+00005,Yucca,66.24,€63,67,89
+00006,Sugar - Invert,94.43,€50,35,92
+00007,Juice - Lagoon Mango,21.77,€87,52,96
+00008,Swiss Chard,33.82,€93,51,34
+00009,Syrup - Monin Amaretta,19.68,€96,81,68
+00010,Lettuce - Iceberg,30.42,€82,23,61
+00011,Nut - Macadamia,42.59,€84,97,35
+00012,Wine - Cahors Ac 2000 Clos,84.29,€29,64,19
+00013,Tomato Puree,58.37,€1,67,17
+00014,Cut Wakame - Hanawakaba,49.97,€12,28,41
+00015,Nut - Cashews Whole Raw,89.86,€18,38,86
+00016,Fish - Base Bouillion,81.14,€89,28,19
+00017,Kiwi Gold Zespri,28.71,€39,63,72
+00018,Garlic - Primerba, Paste,81.74,€47,44,13
+00019,Compound - Passion Fruit,61.34,€88,17,37
+00020,Wine - Rioja Campo Viejo,40.22,€5,78,56
