@@ -1,8 +1,8 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 /**
  * @author Alejandro
- * Clase proveedor
+ *         Clase proveedor
  */
 
 public class Proveedor {
@@ -21,20 +21,22 @@ public class Proveedor {
 
     /**
      * Constructor con parametros
+     * 
      * @param codigo del proveedor
-     * @param cif del proveedor
+     * @param cif    del proveedor
      * @param nombre del proveedor
      */
     public Proveedor(int codigo, String cif, String nombre, String direccion, int telefono) {
         this.codigo = codigo;
         this.cif = cif;
         this.nombre = nombre;
-        this.direccion=direccion;
-        this.telefono=telefono;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     /**
      * Getter del codigo
+     * 
      * @return Codigo del proveedor
      */
     public int getCodigo() {
@@ -43,6 +45,7 @@ public class Proveedor {
 
     /**
      * Setter del codigo
+     * 
      * @param codigo del proveedor
      */
     public void setCodigo(int codigo) {
@@ -51,6 +54,7 @@ public class Proveedor {
 
     /**
      * Getter del cif del proveedor
+     * 
      * @return cif del proveedor
      */
     public String getCif() {
@@ -59,6 +63,7 @@ public class Proveedor {
 
     /**
      * Setter del cif del proveedor
+     * 
      * @param cif del proveedor
      */
     public void setCif(String cif) {
@@ -67,6 +72,7 @@ public class Proveedor {
 
     /**
      * Getter del nombre del proveedor
+     * 
      * @return Nombre del proveedor
      */
     public String getNombre() {
@@ -75,10 +81,10 @@ public class Proveedor {
 
     /**
      * Setter del nombre del proveedor
+     * 
      * @param nombre del proveedor
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }    
+    }
 }
-

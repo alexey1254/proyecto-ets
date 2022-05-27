@@ -1,8 +1,8 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 /**
  * @author Alejandro
- * Clase envio 
+ *         Clase envio
  */
 public class Envio {
     private String codigo;
@@ -13,11 +13,12 @@ public class Envio {
 
     /**
      * Constructor con parametros
-     * @param codigo del envio
-     * @param fecha del envio
+     * 
+     * @param codigo       del envio
+     * @param fecha        del envio
      * @param destinatario del envio
-     * @param estado del envio
-     * @param pedido Lo que compro el cliente, su pedido
+     * @param estado       del envio
+     * @param pedido       Lo que compro el cliente, su pedido
      */
     public Envio(String codigo, Fecha fecha, Cliente destinatario, String estado, Compra pedido) {
         this.codigo = codigo;
@@ -29,6 +30,7 @@ public class Envio {
 
     /**
      * Getter del codigo del envio
+     * 
      * @return Codigo del envio
      */
     public String getCodigo() {
@@ -37,6 +39,7 @@ public class Envio {
 
     /**
      * Setter del codigo del envio
+     * 
      * @param codigo del envio
      */
     public void setCodigo(String codigo) {
@@ -45,6 +48,7 @@ public class Envio {
 
     /**
      * Getter de fecha
+     * 
      * @return Fecha del pedido
      */
     public Fecha getFecha() {
@@ -53,6 +57,7 @@ public class Envio {
 
     /**
      * Setter de fecha
+     * 
      * @param fecha de la compra
      */
     public void setFecha(Fecha fecha) {
@@ -61,6 +66,7 @@ public class Envio {
 
     /**
      * Getter del destinatario
+     * 
      * @return Destinatario
      */
     public Cliente getDestinatario() {
@@ -69,6 +75,7 @@ public class Envio {
 
     /**
      * Setter del destinatario
+     * 
      * @param destinatario Destino a donde quieres que vaya el paquete
      */
     public void setDestinatario(Cliente destinatario) {
@@ -77,6 +84,7 @@ public class Envio {
 
     /**
      * Getter del estado
+     * 
      * @return Estado del envio
      */
     public String getEstado() {
@@ -85,6 +93,7 @@ public class Envio {
 
     /**
      * Setter del estado
+     * 
      * @param estado del envio
      */
     public void setEstado(String estado) {
@@ -93,6 +102,7 @@ public class Envio {
 
     /**
      * Getter del pedido
+     * 
      * @return Pedido
      */
     public Compra getPedido() {
@@ -101,6 +111,7 @@ public class Envio {
 
     /**
      * Setter del pedido
+     * 
      * @param pedido del cliente
      */
     public void setPedido(Compra pedido) {

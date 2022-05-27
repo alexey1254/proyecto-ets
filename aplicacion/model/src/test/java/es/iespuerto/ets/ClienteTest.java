@@ -1,10 +1,9 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.*;
-
 
 public class ClienteTest {
     private static final int codigo = 001;
@@ -14,12 +13,12 @@ public class ClienteTest {
     private static final String apellido2 = "Lopez";
     private static final String direccion = "Calle 1";
     Cliente cliente;
-    
+
     @BeforeEach
     public void BeforeEach() {
- 
-        if(cliente==null){
-            cliente=new Cliente(codigo,dni,nombre,apellido1,apellido2,direccion);
+
+        if (cliente == null) {
+            cliente = new Cliente(codigo, dni, nombre, apellido1, apellido2, direccion);
         }
     }
 
@@ -30,41 +29,41 @@ public class ClienteTest {
 
     @Test
     public void getCodigoTest() {
-        assertTrue(cliente.getCodigo()==codigo);
+        assertTrue(cliente.getCodigo() == codigo);
     }
-    
+
     @Test
     public void setDniTest() {
-        String dni="3243X";
+        String dni = "3243X";
         cliente.setDni(dni);
-        //assertTrue(empleado.getCargo().equals(cargo));
+        // assertTrue(empleado.getCargo().equals(cargo));
     }
 
     @Test
     public void setNombreTest() {
-        String nombre="Juana";
+        String nombre = "Juana";
         cliente.setNombre(nombre);
-       // assertTrue(empleado.getCargo().equals(cargo));
+        // assertTrue(empleado.getCargo().equals(cargo));
     }
 
     @Test
     public void setApellido1Test() {
-        String apellido1="Lopez";
+        String apellido1 = "Lopez";
         cliente.setApellido1(apellido1);
-        //assertTrue(empleado.getCargo().equals(cargo));
+        // assertTrue(empleado.getCargo().equals(cargo));
     }
-    
+
     @Test
     public void setApellido2Test() {
-        String apellido2="Díaz";
+        String apellido2 = "Díaz";
         cliente.setApellido2(apellido2);
-        //assertTrue(empleado.getCargo().equals(cargo));
+        // assertTrue(empleado.getCargo().equals(cargo));
     }
 
     @Test
     public void setDireccionTest() {
-        String direccion2="Calle 2";
+        String direccion2 = "Calle 2";
         cliente.setDireccion(direccion2);
-     //   assertTrue(cliente.getDireccion().equals(direccion2));
+        // assertTrue(cliente.getDireccion().equals(direccion2));
     }
 }

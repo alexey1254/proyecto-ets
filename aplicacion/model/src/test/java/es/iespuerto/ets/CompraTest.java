@@ -1,7 +1,6 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,14 +23,14 @@ public class CompraTest {
 
     @BeforeEach
     public void BeforeEach() {
-        if(producto==null){
-            producto=new Producto(codigoP,nombre,peso,precio,stock);
+        if (producto == null) {
+            producto = new Producto(codigoP, nombre, peso, precio, stock);
         }
-        if(fecha==null){
-            fecha=new Fecha(dia,mes,anio);
+        if (fecha == null) {
+            fecha = new Fecha(dia, mes, anio);
         }
-        if(compra==null){
-            compra=new Compra(codigo,producto,cantidad,fecha);
+        if (compra == null) {
+            compra = new Compra(codigo, producto, cantidad, fecha);
         }
     }
 
@@ -52,7 +51,8 @@ public class CompraTest {
 
     @Test
     void testGetProducto() {
-        assertEquals(producto, compra.getProducto(), "Se esperaba el producto definido como variable local en el beforeEach");
+        assertEquals(producto, compra.getProducto(),
+                "Se esperaba el producto definido como variable local en el beforeEach");
     }
 
     @Test
