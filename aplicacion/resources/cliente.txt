@@ -1,0 +1,11 @@
+codigoCliente,dni,nombre,apellido1,apellido2,direccion,codigoValidarse
+1,49592657B,Olag,Vandrill,Spellissy,6 Oak Avenue,0007
+2,24153080K,Malvin,Bragge,Mongenot,43626 Schlimgen Road,0008
+3,12351380N,Adda,Wissbey,Moxom,42 Mosinee Way,0009
+4,30707719M,Rolf,Kembery,Kiln,6 Manley Drive,0010
+5,42699733A,Christiana,Giddings,Book,74 Sachs Lane,0011
+6,51359249L,Hewett,Oxby,Ricardou,55222 Derek Hill,0012
+7,89526612D,Vonni,Tebbe,Reaveley,008 Red Cloud Place,0013
+8,55233251Q,Gustave,Coulsen,Oxley,9402 Eliot Road,0014
+9,94443960A,Margarita,Doorly,Tisor,84 Columbus Pass,0015
+10,70422215X,Krispin,Fowell,Goldsworthy,599 Ryan Point,0016

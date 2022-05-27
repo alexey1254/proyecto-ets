@@ -3,26 +3,15 @@
       
   
   <modelVersion>4.0.0</modelVersion>
-      
-  
-  <groupId>es.iespuerto.ets</groupId>
-      
-  
+  <groupId>es.iespuertodelacruz.ets</groupId>
   <artifactId>proyecto-ets</artifactId>
-      
-  
   <version>1.0-SNAPSHOT</version>
-      
-  
+
   <packaging>pom</packaging>
-      
-  
   <name>Parent del proyecto ETS</name>
       
-  
   <url>${web}</url>
-      
-  
+        
   <properties>
         <web>https://github.com/alexey1254/proyecto-ets</web>
         <maven.compiler.source>11</maven.compiler.source>
@@ -33,11 +22,12 @@
         <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
         <checkstyle.version>8.39</checkstyle.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+        <!--<jacoco-maven-plugin.version>0.8.4</jacoco-maven-plugin.version>-->
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <jacoco.unit-tests.limit.instruction-ratio>0%</jacoco.unit-tests.limit.instruction-ratio>
         <jacoco.unit-tests.limit.branch-ratio>0%</jacoco.unit-tests.limit.branch-ratio>
-        <jacoco.unit-tests.limit.class-complexity>20</jacoco.unit-tests.limit.class-complexity>
+        <jacoco.unit-tests.limit.class-complexity>10</jacoco.unit-tests.limit.class-complexity>
         <jacoco.unit-tests.limit.method-complexity>5</jacoco.unit-tests.limit.method-complexity>
     </properties>
     <dependencies>
@@ -159,18 +149,9 @@
             </plugin>
         </plugins>
     </reporting>
-      
+    
+    <modules>
+        <module>aplicacion</module>
+    </modules>
   
-  <modules>
-            
-    
-    <!--<module>vista</module>-->
-            
-    
-    <module>model</module>
-          
-    
-    <module>controlador</module>
-      
-  </modules>
 </project>

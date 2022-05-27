@@ -1,3 +1,0 @@
-codigoAdministrador,dni,codigoValidarse
-1,13833724Y,0001
-2,91307659M,0002
