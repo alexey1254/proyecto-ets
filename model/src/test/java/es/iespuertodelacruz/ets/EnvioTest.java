@@ -1,5 +1,6 @@
 package es.iespuertodelacruz.ets;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,120 +13,69 @@ import es.iespuertodelacruz.ets.Envio;
 import es.iespuertodelacruz.ets.Fecha;
 import es.iespuertodelacruz.ets.Producto;
 
-public class EnvioTest {
-/*    private static final int codigo = 001;
-    private static final int peso = 1500;
-    private static final int cantidad = 1;
-    private static final String estado = "En camino";
-    private static final String apellido = "Perez";
-    private static final String nombre = "Juan";
-    private static final String dni = "12345Z";
-    private static final int dia = 26;
-    private static final int mes = 02;
-    private static final int anio = 2020;
-    private static final String direccion = "Calle 1";
-    Compra compra;
-    Fecha fecha;
-    Persona persona;
-    Cliente cliente;
-    Producto producto;
-    Envio envio;
-    
+class EnvioTest {
+    Fecha fecha = new Fecha(21, 06, 2001);
+    Producto producto = new Producto(001, "Papas", 10, 12, 21);
+    Compra pedido = new Compra(001, producto, 12, new Fecha(29, 07, 2000));
+    Cliente destinatario = new Cliente(002, "4553552X", "Ale", "Marrero", "Cabrera", "Pepe");
+    Envio envio = new Envio(003, fecha, destinatario, "Nuevo", pedido);
 
-    @BeforeEach
-    public void BeforeEach() {
-        if(cliente==null){
-            cliente=new Cliente(codigo,persona,direccion);
-        }
-        if(fecha==null){
-            fecha=new Fecha(dia,mes,anio);
-        }
-        if(persona==null){
-            persona=new Persona(dni,nombre,apellido);
-        }
-        if(producto==null){
-            producto=new Producto(codigo,nombre,peso);
-        }
-        if(compra==null){
-            compra=new Compra(codigo,producto,cantidad,fecha);
-        }
-        if(envio==null){
-            envio=new Envio(codigo,fecha,cliente,estado,compra);
-        }
+    @Test
+    void testGetCodigo() {
+        assertEquals(003, envio.getCodigo(), "testGetCodigo, Se esperaba el codigo 003");
     }
 
     @Test
-    public void constructorVacioEnvioTest() {
-        envio = new Envio();
-        assertNotNull(envio, "El objeto Envio debe ser nulo");
+    void testGetDestinatario() {
+        assertEquals(destinatario, envio.getDestinatario(), "testGetDestinatario, Se esperaba destinatario definido");
     }
 
     @Test
-    public void constructorCincoParametrosEnvioTest() {
-        assertNotNull(envio, "El objeto Envio no puede ser nulo");
+    void testGetEstado() {
+        assertEquals("Nuevo", envio.getEstado(), "testGetEstado, Se esperaba el estado Nuevo");
     }
 
     @Test
-    public void getCodigoTest() {
-        assertTrue(cliente.getCodigo()==codigo);
-    }
-    
-    @Test
-    public void setCodigoTest() {
-        cliente.setCodigo(002);
-        assertTrue(cliente.getCodigo()==002);
+    void testGetFecha() {
+        assertEquals(fecha, envio.getFecha(), "testGetFecha, Se esperaba la fecha 21/06/2001");
     }
 
     @Test
-    public void getFechaTest() {
-        assertTrue(compra.getFecha().equals(fecha));
-    }    
-
-    @Test
-    public void setFechaTest() {
-        Fecha fecha2=new Fecha(04,05,2021);
-        compra.setFecha(fecha2);
-        assertTrue(compra.getFecha().equals(fecha2));
+    void testGetPedido() {
+        assertEquals(pedido, envio.getPedido(), "testGetPedido, Se esperaba el pedido definido");
     }
 
     @Test
-    public void getDestinatarioTest() {
-        assertTrue(envio.getDestinatario().equals(cliente));
-    }
-    
-    @Test
-    public void setDestinatarioTest() {
-        Persona persona1=new Persona("12L","Maria",
-        "Lopez");
-        Cliente cliente1=new Cliente(002,persona1,"Calle 2");
-        envio.setDestinatario(cliente1);
-        assertTrue(envio.getDestinatario().equals(cliente1));
+    void testSetCodigo() {
+        envio.setCodigo(40);
+        assertEquals(40, envio.getCodigo(), "testSetCodigo, Se esperaba el codigo 40");
     }
 
     @Test
-    public void getEstadoTest() {
-        assertTrue(envio.getEstado().equals(estado));
-    }    
+    void testSetDestinatario() {
+        Cliente destinatarioTest = new Cliente(4040, "123456X", "Pedro", "Javier", "Juanjo", "Avda plaza mayor");
+        envio.setDestinatario(destinatarioTest);
+        assertEquals(destinatarioTest, envio.getDestinatario(),
+                "testSetDestinatario, Se esperaba el destinatario definido");
+    }
 
     @Test
-    public void setEstadoTest() {
-        String estado1="Enviado";
-        envio.setEstado(estado1);
-        assertTrue(envio.getEstado().equals(estado1));
+    void testSetEstado() {
+        envio.setEstado("Viejo");
+        assertEquals("Viejo", envio.getEstado(), "testSetEstado, Se esperaba el estado viejo");
     }
-    
-    @Test
-    public void getPedidoTest() {
-        assertTrue(envio.getPedido().equals(compra));
-    }    
 
     @Test
-    public void setPedidoTest() {
-        Producto producto1 = new Producto(002,"Carpeta",200);
-        Fecha fecha1 = new Fecha(03,12,2019);
-        Compra compra1=new Compra(002,producto1,4,fecha1);;
-        envio.setPedido(compra1);
-        assertTrue(envio.getPedido().equals(compra1));
+    void testSetFecha() {
+        Fecha nuevaFecha = new Fecha(10, 03, 1999);
+        envio.setFecha(nuevaFecha);
+        assertEquals(nuevaFecha, envio.getFecha(), "Se esperaba la fecha definida: 10/03/1999");
     }
-*/
+
+    @Test
+    void testSetPedido() {
+        Compra pedidoNuevo = new Compra(002, producto, 12, new Fecha(29, 12, 2000));
+        envio.setPedido(pedidoNuevo);
+        assertEquals(pedidoNuevo, envio.getPedido(), "Se esperaba el pedido definido");
+    }
 }
