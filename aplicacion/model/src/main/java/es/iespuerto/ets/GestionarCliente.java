@@ -19,7 +19,6 @@ public class GestionarCliente {
      * @throws FileNotFoundException Excepcion indicando que el fichero no existe
      */
     public List<Cliente> leerClientes() throws FileNotFoundException, URISyntaxException {
-        List<Cliente> clientes = new ArrayList<>();
         Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("cliente.txt")));
         String linea;
         String[] lineaDatos;
@@ -80,8 +79,7 @@ public class GestionarCliente {
      * @throws Exception Excepcion en caso de no encontrar al cliente
      */
     public void bajaCliente(int codigo) throws Exception {
-        Integer posicion = null;
-        posicion = encontrarCliente(codigo);
+        int posicion = encontrarCliente(codigo);
         clientes.remove(posicion);
 
     }

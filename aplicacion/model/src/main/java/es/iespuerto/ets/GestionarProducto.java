@@ -19,7 +19,6 @@ public class GestionarProducto {
      * @throws FileNotFoundException Excepcion indicando que el fichero no existe
      */
     public List<Producto> leerProductos() throws FileNotFoundException, URISyntaxException {
-        List<Producto> productos = new ArrayList<>();
         Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("producto.txt")));
         String linea;
         String[] lineaDatos;
@@ -79,8 +78,7 @@ public class GestionarProducto {
      * @throws Exception Excepcion en caso de no encontrar al producto
      */
     public void bajaProducto(int codigo) throws Exception {
-        Integer posicion = null;
-        posicion = encontrarProducto(codigo);
+        int posicion = encontrarProducto(codigo);
         productos.remove(posicion);
     }
 

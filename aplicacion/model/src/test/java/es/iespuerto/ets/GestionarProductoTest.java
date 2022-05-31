@@ -1,7 +1,6 @@
 package es.iespuerto.ets;
 
 import java.io.File;
-import java.net.ProxySelector;
 import java.util.*;
 
 import org.junit.jupiter.api.Assertions;

@@ -22,4 +22,9 @@ public class Utilidades {
         String absolutePath = file.getAbsolutePath();
         return absolutePath;
     }
+
+    public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
+        String path = obtenerPathFichero("producto.txt");
+        System.out.println(path);
+    }
 }

@@ -1,11 +1,13 @@
 package es.iespuerto.ets;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 import java.util.*;
 
 import org.junit.jupiter.api.*;
 
-public class GestionarClienteTest {
+class GestionarClienteTest {
     private static final int codigo = 001;
     private static final String dni = "12345Z";
     private static final String nombre = "Juan";
@@ -18,29 +20,21 @@ public class GestionarClienteTest {
     Cliente cliente = null;
 
     @BeforeEach
-    public void beforeEach() {
+    void beforeEach() {
         if (cliente == null) {
             cliente = new Cliente(codigo, dni, nombre, apellido1, apellido2, direccion);
         }
     }
 
     @Test
-    public void FileNotFoundExceptionTest() {
+    void FileNotFoundExceptionTest() {
         File tempFile = new File("cliente.txt");
         Assertions.assertFalse(tempFile.exists(), "No se encuentra el fichero");
 
     }
 
-    /*
-     * @Test
-     * public void addTest() throws FileNotFoundException, URISyntaxException {
-     * Assertions.assertEquals(4,gestionarEmpleado.getEmpleados().size(),
-     * "La lista no contiene el numero de elementos correctos");
-     * }
-     */
-
     @Test
-    public void verClienteTest() {
+    void verClienteTest() {
         Assertions.assertEquals(cliente, cliente, "No se puede ver el empleado");
     }
 
