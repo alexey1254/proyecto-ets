@@ -1,5 +1,6 @@
 package es.iespuerto.ets;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -23,31 +24,37 @@ public class ClienteTest {
     }
 
     @Test
-    public void constructorClienteTest() {
+    void setCodigoTest() {
+        cliente.setCodigo(1234);
+        assertEquals(1234, cliente.getCodigo(), "Se esperaba el codigo 1234");
+    }
+
+    @Test
+    void constructorClienteTest() {
         assertNotNull(cliente, "El objeto Cliente no puede ser nulo");
     }
 
     @Test
-    public void getCodigoTest() {
+    void getCodigoTest() {
         assertTrue(cliente.getCodigo() == codigo);
     }
 
     @Test
-    public void setDniTest() {
+    void setDniTest() {
         String dni = "3243X";
         cliente.setDni(dni);
         // assertTrue(empleado.getCargo().equals(cargo));
     }
 
     @Test
-    public void setNombreTest() {
+    void setNombreTest() {
         String nombre = "Juana";
         cliente.setNombre(nombre);
         // assertTrue(empleado.getCargo().equals(cargo));
     }
 
     @Test
-    public void setApellido1Test() {
+    void setApellido1Test() {
         String apellido1 = "Lopez";
         cliente.setApellido1(apellido1);
         // assertTrue(empleado.getCargo().equals(cargo));
@@ -61,7 +68,7 @@ public class ClienteTest {
     }
 
     @Test
-    public void setDireccionTest() {
+    void setDireccionTest() {
         String direccion2 = "Calle 2";
         cliente.setDireccion(direccion2);
         // assertTrue(cliente.getDireccion().equals(direccion2));

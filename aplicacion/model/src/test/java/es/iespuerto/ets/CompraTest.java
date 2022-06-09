@@ -33,6 +33,17 @@ public class CompraTest {
             compra = new Compra(codigo, producto, cantidad, fecha);
         }
     }
+    @Test
+    void constructorVacioTest() {
+        Compra compraVacio = new Compra();
+        assertEquals(compraVacio, compraVacio, "El objeto debe ser null");
+    }
+
+    @Test
+    void setProductoTest() {
+        compra.setProducto(producto);
+        assertEquals(producto, compra.getProducto(), "Se esperaba un producto");
+    }
 
     @Test
     void testGetCantidad() {

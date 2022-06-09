@@ -43,12 +43,6 @@ public class GestionarEmpleadoTest {
     }
 
     @Test
-    public void addTest() throws FileNotFoundException, URISyntaxException {
-        Assertions.assertEquals(4, gestionarEmpleado.getEmpleados().size(),
-                "La lista no contiene el numero de elementos correctos");
-    }
-
-    @Test
     public void verEmpleadoTest() {
         Assertions.assertEquals(empleado, empleado, "No se puede ver el empleado");
     }
