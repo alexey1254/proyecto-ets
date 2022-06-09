@@ -20,7 +20,7 @@ public class GestionarEmpleado {
      */
     public static List<Empleado> leerEmpleados() throws FileNotFoundException, URISyntaxException {
         List<Empleado> empleados = new ArrayList<>();
-        Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("empleado.txt")));
+        Scanner fichero = Utilidades.obtenerScannerFichero("empleados.txt");
         int dia, mes, anio;
         String linea, fechaString;
         Fecha fecha;

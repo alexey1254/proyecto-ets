@@ -1,14 +1,23 @@
 package es.iespuerto.ets;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.when;
 
 import java.io.*;
 import java.net.URISyntaxException;
 import java.util.*;
 
 import org.junit.jupiter.api.*;
+import org.mockito.Mock;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 public class GestionarEmpleadoTest {
+    MockedStatic<Utilidades> Utilities = Mockito.mockStatic(Utilidades.class);
+
+
+    @Mock Scanner scanner;
 
     private static final int codigo = 001;
     private static final String dni = "12345Z";
@@ -21,17 +30,36 @@ public class GestionarEmpleadoTest {
     private static final int anio = 2020;
 
     GestionarEmpleado gestionarEmpleado;
-    List<Empleado> empleados = new ArrayList<>();
+    List<Empleado> empleados = null;
     Empleado empleado = null;
     Fecha fecha;
 
     @BeforeEach
     public void beforeEach() {
-        if (fecha == null) {
-            fecha = new Fecha(dia, mes, anio);
+        MockitoAnnotations.initMocks(this);
+        gestionarEmpleado = new GestionarEmpleado();
+
+        try {
+            Mockito.when(Utilidades.obtenerScannerFichero(Mockito.any())).thenReturn(scanner);
+            Mockito.when(scanner.nextLine()).thenReturn("1,99973586S,Herminia,Emmens,Josipovitz,20/08/1981,cajero,0003");
+            Mockito.when(scanner.hasNextLine()).thenReturn(true,false);
+            empleados = gestionarEmpleado.leerEmpleados();
+        } catch (Exception e) {
+            Assertions.fail("Se ha producido un error en el test leerEmpleados");
         }
-        if (empleado == null) {
-            empleado = new Empleado(codigo, dni, nombre, apellido1, apellido2, fecha, cargo);
+    }
+
+
+
+    @Test
+    void leerEmpleadosTest() {
+        try {
+
+            Assertions.assertNotNull(empleados, "La lista de empleados no debe de ser nula");
+            Assertions.assertEquals(1,empleados.size(), "No se ha retornado un elemento");
+
+        } catch (Exception e) {
+           Assertions.fail("Se ha producido un error en el test leerEmpleados");
         }
     }
 

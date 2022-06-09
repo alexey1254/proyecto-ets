@@ -6,8 +6,12 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+
 
 class UtilidadesTest {
+     @Mock Utilidades utilidades;
     String nombreFichero = "producto.txt";
 
     /*@Test
@@ -15,5 +19,7 @@ class UtilidadesTest {
         String path = Utilidades.obtenerPathFichero(nombreFichero);
         assertEquals("", Utilidades.obtenerPathFichero(nombreFichero), "Se esperaba");
     }*/
+
+    
 
 }

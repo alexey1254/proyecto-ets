@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Utilidades {
 
@@ -23,8 +24,18 @@ public class Utilidades {
         return absolutePath;
     }
 
-    public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
-        String path = obtenerPathFichero("producto.txt");
-        System.out.println(path);
+    /**
+     * 
+     * @param nombreFichero
+     * @return
+     */
+    public static Scanner obtenerScannerFichero(String nombreFichero) throws FileNotFoundException,URISyntaxException {
+        Scanner contenidoFichero = new Scanner(new File(Utilidades.obtenerPathFichero(nombreFichero)));
+
+        
+        return contenidoFichero;
+
     }
+
+
 }
