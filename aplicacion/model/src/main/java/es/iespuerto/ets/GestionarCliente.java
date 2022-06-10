@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -17,7 +17,7 @@ public class GestionarCliente {
      * @param ficheroClientes Nombre del fichero de clientes
      * @throws FileNotFoundException Excepcion indicando que el fichero no existe
      */
-    public List<Cliente> leerClientes() throws FileNotFoundException, URISyntaxException {
+    public static List<Cliente> leerClientes() throws FileNotFoundException, URISyntaxException {
         List<Cliente> clientes= new ArrayList<>();
         Scanner fichero = new Scanner(new File(Utilidades.obtenerPathFichero("cliente.txt")));
         String linea;

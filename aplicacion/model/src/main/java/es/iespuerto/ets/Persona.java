@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 /**
  * Clase Persona que sera usada por la clase Cliente y Empleado

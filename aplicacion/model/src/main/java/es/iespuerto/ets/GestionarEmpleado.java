@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 import java.io.*;
 import java.net.URISyntaxException;

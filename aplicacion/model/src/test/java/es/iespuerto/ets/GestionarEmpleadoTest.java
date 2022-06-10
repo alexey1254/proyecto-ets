@@ -1,4 +1,4 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

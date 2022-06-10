@@ -2,6 +2,10 @@
 
 ## GestiNess
 
+<div align="center">
+  <img src="imagenes/logos/logo_gestiness.png"   />
+</div>
+
 ### Se hará un programa para la gestión de PYMES
 
 [Enlace a la wiki](https://github.com/alexey1254/proyecto-ets/wiki)

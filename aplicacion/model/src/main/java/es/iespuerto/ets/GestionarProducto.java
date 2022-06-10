@@ -1,9 +1,8 @@
-package es.iespuertodelacruz.ets.model;
+package es.iespuerto.ets;
 
 import java.io.*;
 import java.net.URISyntaxException;
 import java.util.*;
-
 
 /**
  * Clase que sera usada para gestionar el producto
@@ -152,6 +151,11 @@ public class GestionarProducto {
             i++;
         }
         throw new Exception("No se ha encontrado el producto.");
-    }    
+    } 
+    public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
+        GestionarProducto gs=new GestionarProducto();
+        gs.leerProductos();
+        System.out.println(gs);    
+    }
 
 }
