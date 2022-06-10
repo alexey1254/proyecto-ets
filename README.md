@@ -1,10 +1,10 @@
-# Proyecto para Entornos de desarrollo
-
-## GestiNess
-
 <div align="center">
   <img src="imagenes/logos/logo_gestiness.png"   />
 </div>
+
+# Proyecto para Entornos de desarrollo
+
+## GestiNess
 
 ### Se hará un programa para la gestión de PYMES
 
