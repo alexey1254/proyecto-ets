@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-      
-  
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>es.iespuertodelacruz.ets</groupId>
-  <artifactId>proyecto-ets</artifactId>
-  <version>1.0-SNAPSHOT</version>
 
-  <packaging>pom</packaging>
-  <name>Parent del proyecto ETS</name>
-      
-  <url>${web}</url>
-        
-  <properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>es.iespuertodelacruz.ets</groupId>
+    <artifactId>proyecto-ets</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+    <name>Parent del proyecto ETS</name>
+
+    <url>${web}</url>
+
+    <properties>
         <web>https://github.com/alexey1254/proyecto-ets</web>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -27,8 +27,9 @@
         <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
         <jacoco.unit-tests.limit.instruction-ratio>0%</jacoco.unit-tests.limit.instruction-ratio>
         <jacoco.unit-tests.limit.branch-ratio>0%</jacoco.unit-tests.limit.branch-ratio>
-        <jacoco.unit-tests.limit.class-complexity>10</jacoco.unit-tests.limit.class-complexity>
-        <jacoco.unit-tests.limit.method-complexity>5</jacoco.unit-tests.limit.method-complexity>
+        <jacoco.unit-tests.limit.class-complexity>20</jacoco.unit-tests.limit.class-complexity>
+        <jacoco.unit-tests.limit.method-complexity>20</jacoco.unit-tests.limit.method-complexity>
+        <mokito-version>3.8.0</mokito-version>
     </properties>
     <dependencies>
         <dependency>
@@ -43,7 +44,28 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mokito-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mokito-version}</version>
+            <scope>test</scope>
+        </dependency>
+            <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>3.8.0</version>
+            <scope>test</scope>
+    </dependency>
+        </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -149,9 +171,9 @@
             </plugin>
         </plugins>
     </reporting>
-    
+
     <modules>
         <module>aplicacion</module>
     </modules>
-  
+
 </project>

@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 public class ProveedorTest {
 
     private static final int codigo = 001;
@@ -15,13 +14,13 @@ public class ProveedorTest {
     private static final String nombre = "Marina S.L";
     private static final String direccion = "Calle 1";
     private static final int telefono = 99677;
-    
+
     Proveedor proveedor;
 
     @BeforeEach
-    public void BeforeEach() { 
-        if(proveedor==null){
-            proveedor=new Proveedor(codigo,cif,nombre,direccion, telefono);
+    public void BeforeEach() {
+        if (proveedor == null) {
+            proveedor = new Proveedor(codigo, cif, nombre, direccion, telefono);
         }
     }
 
@@ -49,7 +48,7 @@ public class ProveedorTest {
     @Test
     void testSetCif() {
         proveedor.setCif("1212R");
-        assertEquals("1212R",proveedor.getCif(), "Se esperaba el cif 1212R");
+        assertEquals("1212R", proveedor.getCif(), "Se esperaba el cif 1212R");
     }
 
     @Test

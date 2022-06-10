@@ -2,6 +2,7 @@ package es.iespuerto.ets;
 
 /**
  * Clase Empleado.
+ * 
  * @author Grace
  */
 public class Empleado extends Persona {
@@ -12,16 +13,18 @@ public class Empleado extends Persona {
 
     /**
      * Constructor de Empleado que recibe siete parametros
-     * @param codigo Codigo del empleado
-     * @param dni DNI del empleado
-     * @param nombre Nombre del empleado
+     * 
+     * @param codigo    Codigo del empleado
+     * @param dni       DNI del empleado
+     * @param nombre    Nombre del empleado
      * @param apellido1 Primer apellido del empleado
      * @param apellido2 Segundo apellido del empleado
-     * @param fechNac fecha de nacimiento del empleado
-     * @param cargo que ostenta el empleado
+     * @param fechNac   fecha de nacimiento del empleado
+     * @param cargo     que ostenta el empleado
      */
-    public Empleado(int codigo,String dni, String nombre, String apellido1, String apellido2, Fecha fechNac, String cargo) {
-        super(dni, nombre, apellido1,apellido2);
+    public Empleado(int codigo, String dni, String nombre, String apellido1, String apellido2, Fecha fechNac,
+            String cargo) {
+        super(dni, nombre, apellido1, apellido2);
         this.codigo = codigo;
         this.fechNac = fechNac;
         this.cargo = cargo;
@@ -29,6 +32,7 @@ public class Empleado extends Persona {
 
     /**
      * Getter del codigo del empleado
+     * 
      * @return Devuelve codigo del empleado
      */
     public int getCodigo() {
@@ -37,6 +41,7 @@ public class Empleado extends Persona {
 
     /**
      * Getter del dni del empleado
+     * 
      * @return Devuelve el dni del empleado
      */
     public String getDni() {
@@ -45,6 +50,7 @@ public class Empleado extends Persona {
 
     /**
      * Setter del dni del empleado
+     * 
      * @param dni Nuevo dni del empleado
      */
     public void setDni(String dni) {
@@ -53,6 +59,7 @@ public class Empleado extends Persona {
 
     /**
      * Getter del nombre del empleado
+     * 
      * @return Devuelve el nombre del empleado
      */
     public String getNombre() {
@@ -61,6 +68,7 @@ public class Empleado extends Persona {
 
     /**
      * Setter del nombre del empleado
+     * 
      * @param nombre Nuevo nombre del empleado
      */
     public void setNombre(String nombre) {
@@ -69,6 +77,7 @@ public class Empleado extends Persona {
 
     /**
      * Getter del apellido1 del empleado
+     * 
      * @return Devuelve el primer apellido del empleado
      */
     public String getApellido1() {
@@ -77,6 +86,7 @@ public class Empleado extends Persona {
 
     /**
      * Setter del primer apellido del empleado
+     * 
      * @param apellido1 Nuevo primer apellido del empleado
      */
     public void setApellido1(String apellido1) {
@@ -85,6 +95,7 @@ public class Empleado extends Persona {
 
     /**
      * Getter del apellido2 del empleado
+     * 
      * @return Devuelve el segundo apellido del empleado
      */
     public String getApellido2() {
@@ -93,6 +104,7 @@ public class Empleado extends Persona {
 
     /**
      * Setter del segundo apellido del empleado
+     * 
      * @param apellido2 Nuevo segundo apellido del empleado
      */
     public void setApellido2(String apellido2) {
@@ -101,6 +113,7 @@ public class Empleado extends Persona {
 
     /**
      * Getter de la fecha de nacimiento del empleado
+     * 
      * @return Devuelve la fecha de nacimiento del empleado
      */
     public Fecha getFechNac() {
@@ -109,14 +122,16 @@ public class Empleado extends Persona {
 
     /**
      * Setter de la fecha de nacimiento del empleado
+     * 
      * @param fechNac fecha de nacimiento del empleado
      */
     public void setFechNac(Fecha fechNac) {
         this.fechNac = fechNac;
     }
-    
+
     /**
      * Getter de la fecha de nacimiento del empleado
+     * 
      * @return Devuelve el cargo del empleado
      */
     public String getCargo() {
@@ -125,6 +140,7 @@ public class Empleado extends Persona {
 
     /**
      * Setter del cargo del empleado
+     * 
      * @param cargo Nuevo cargo del empleado
      */
     public void setCargo(String cargo) {

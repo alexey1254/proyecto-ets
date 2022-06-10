@@ -2,7 +2,7 @@ package es.iespuerto.ets;
 
 /**
  * @author Alejandro
- * Clase compra
+ *         Clase compra
  */
 
 public class Compra {
@@ -20,10 +20,11 @@ public class Compra {
 
     /**
      * Constructor con parametros
+     * 
      * @param numFactura de la compra
-     * @param producto que se compra
-     * @param cantidad que se compra
-     * @param fecha de la compra
+     * @param producto   que se compra
+     * @param cantidad   que se compra
+     * @param fecha      de la compra
      */
     public Compra(int numFactura, Producto producto, double cantidad, Fecha fecha) {
         this.numFactura = numFactura;
@@ -34,6 +35,7 @@ public class Compra {
 
     /**
      * Getter numero de factura
+     * 
      * @return numero de factura
      */
     public int getNumFactura() {
@@ -42,6 +44,7 @@ public class Compra {
 
     /**
      * Setter del numero de factura
+     * 
      * @param numFactura Numero de factura
      */
     public void setNumFactura(int numFactura) {
@@ -50,6 +53,7 @@ public class Compra {
 
     /**
      * Getter del producto
+     * 
      * @return producto que el cliente ha comprado
      */
     public Producto getProducto() {
@@ -58,6 +62,7 @@ public class Compra {
 
     /**
      * Setter del producto
+     * 
      * @param producto que el cliente compra
      */
     public void setProducto(Producto producto) {
@@ -66,6 +71,7 @@ public class Compra {
 
     /**
      * Getter de cantidad
+     * 
      * @return Cantidad del producto que compra
      */
     public double getCantidad() {
@@ -74,6 +80,7 @@ public class Compra {
 
     /**
      * Setter de cantidad
+     * 
      * @param cantidad del producto que compra
      */
     public void setCantidad(double cantidad) {
@@ -82,6 +89,7 @@ public class Compra {
 
     /**
      * Getter de la fecha de compra
+     * 
      * @return fecha de la compra
      */
     public Fecha getFecha() {
@@ -90,11 +98,11 @@ public class Compra {
 
     /**
      * Setter de la fecha de compra
+     * 
      * @param fecha de la compra
      */
     public void setFecha(Fecha fecha) {
         this.fecha = fecha;
     }
-    
-    
+
 }

@@ -11,14 +11,14 @@ public class EnvioTest {
     private static final int codigoCliente = 02;
     private static final int codigoProducto = 02;
     private static final int codigoCompra = 02;
-    
+
     private static final String nombreCliente = "Juan";
     private static final int peso = 1500;
     private static final int cantidad = 1;
     private static final String estado = "En camino";
     private static final String apellido1 = "Perez";
     private static final String nombreProducto = "Jarra";
-    private static final String apellido2 ="Pepito";
+    private static final String apellido2 = "Pepito";
     private static final String dni = "12345Z";
     private static final int dia = 26;
     private static final int mes = 02;
@@ -31,24 +31,23 @@ public class EnvioTest {
     Cliente cliente;
     Producto producto;
     Envio envio;
-    
 
     @BeforeEach
     public void BeforeEach() {
-        if(cliente==null){
-            cliente=new Cliente(codigoCliente,dni,nombreCliente, apellido1,apellido2,direccion);
+        if (cliente == null) {
+            cliente = new Cliente(codigoCliente, dni, nombreCliente, apellido1, apellido2, direccion);
         }
-        if(fecha==null){
-            fecha=new Fecha(dia,mes,anio);
+        if (fecha == null) {
+            fecha = new Fecha(dia, mes, anio);
         }
-        if(producto==null){
-            producto=new Producto(codigoProducto,nombreProducto,peso,precio,stock);
+        if (producto == null) {
+            producto = new Producto(codigoProducto, nombreProducto, peso, precio, stock);
         }
-        if(compra==null){
-            compra=new Compra(codigoCompra,producto,cantidad,fecha);
+        if (compra == null) {
+            compra = new Compra(codigoCompra, producto, cantidad, fecha);
         }
-        if(envio==null){
-            envio=new Envio(codigoEnvio,fecha,cliente,estado,compra);
+        if (envio == null) {
+            envio = new Envio(codigoEnvio, fecha, cliente, estado, compra);
         }
     }
 
@@ -61,7 +60,7 @@ public class EnvioTest {
     public void getCodigoTest() {
         assertEquals(codigoEnvio, envio.getCodigo(), "El metodo getCodigo no es correcto");
     }
-    
+
     @Test
     public void setCodigoTest() {
         envio.setCodigo("002");
@@ -71,7 +70,7 @@ public class EnvioTest {
     @Test
     public void getFechaTest() {
         assertEquals(fecha, envio.getFecha(), "El metodo getFecha no es correcto");
-    }    
+    }
 
     @Test
     public void setFechaTest() {
@@ -84,29 +83,29 @@ public class EnvioTest {
     public void getDestinatarioTest() {
         assertEquals(cliente, envio.getDestinatario(), "El getDestinatario no es correcto");
     }
-    
+
     @Test
     public void setDestinatarioTest() {
         envio.setDestinatario(cliente);
-        assertEquals(cliente, envio.getDestinatario(),"El metodo set destinatario no es correcto");
+        assertEquals(cliente, envio.getDestinatario(), "El metodo set destinatario no es correcto");
     }
 
     @Test
     public void getEstadoTest() {
         assertEquals(estado, envio.getEstado(), "El metodo getEstado no es correcto");
-    }    
+    }
 
     @Test
     public void setEstadoTest() {
-        String estado1="Enviado";
+        String estado1 = "Enviado";
         envio.setEstado(estado1);
         assertEquals(estado1, envio.getEstado(), "El metodo setEstado no es correcto");
     }
-    
+
     @Test
     public void getPedidoTest() {
         assertEquals(compra, envio.getPedido(), "El metodo getPedido no es correcto");
-    }    
+    }
 
     @Test
     public void setPedidoTest() {

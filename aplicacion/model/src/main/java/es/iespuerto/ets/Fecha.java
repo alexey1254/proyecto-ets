@@ -1,6 +1,11 @@
 package es.iespuerto.ets;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5ca0e198544a60d0d2664ce03e72fd506c43bf6c
 /**
  * Clase Fecha que inicializa la variable fecha
+ * 
  * @author Grace
  */
 
@@ -12,8 +17,9 @@ public class Fecha {
 
     /**
      * Constructor de la clase que recibe tres parametros
-     * @param dia dia correspondiente a la fecha indicada
-     * @param mes mes correspondiente a la fecha indicada
+     * 
+     * @param dia  dia correspondiente a la fecha indicada
+     * @param mes  mes correspondiente a la fecha indicada
      * @param anio anio correspondiente a la fecha indicada
      */
     public Fecha(int dia, int mes, int anio) {
@@ -23,23 +29,23 @@ public class Fecha {
     }
 
     /**
-     * Comprueba si el mes es valido y el dia es valido, 
+     * Comprueba si el mes es valido y el dia es valido,
      * en ese caso devuelve verdadero.
      * 
      * @return Devuelve un valor booleano
      */
     public boolean valida() {
-        return mesValido() && diaValido() ;
+        return mesValido() && diaValido();
     }
-  
+
     /**
-     * Comprueba si el anio es bisiesto, devuelve verdadero si el anio es 
+     * Comprueba si el anio es bisiesto, devuelve verdadero si el anio es
      * divisible por 400, o si el anio es divisible por 4 y no por 100
      * 
      * @return Devuelve un valor booleano
      */
     private boolean esBisiesto() {
-        return (this.anio % 400 == 0) || ( (this.anio % 4 == 0) && (this.anio % 100 != 0) ) ; 
+        return (this.anio % 400 == 0) || ((this.anio % 4 == 0) && (this.anio % 100 != 0));
     }
 
     /**
@@ -50,7 +56,7 @@ public class Fecha {
      */
     private boolean mesValido() {
         return (this.mes >= 1 && this.mes <= 12);
-        
+
     }
 
     /**
@@ -58,13 +64,13 @@ public class Fecha {
      * 
      * @return Numero de dias del mes.
      */
-    private int diasPorMes(){
-        int[] diasMes=new int[]{31,28,31,30,31,30,31,31,30,31,30,31};
-            
-        if (esBisiesto()){
-            diasMes[1]=29;
+    private int diasPorMes() {
+        int[] diasMes = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+        if (esBisiesto()) {
+            diasMes[1] = 29;
         }
-        return diasMes[this.mes-1];
+        return diasMes[this.mes - 1];
     }
 
     /**
@@ -73,6 +79,6 @@ public class Fecha {
      * @return Devuelve un valor booleano
      */
     private boolean diaValido() {
-        return this.dia>=1 && this.dia <= diasPorMes();
+        return this.dia >= 1 && this.dia <= diasPorMes();
     }
 }
